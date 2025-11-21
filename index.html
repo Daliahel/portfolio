@@ -111,35 +111,33 @@
         }
         <!-- PROJECTS -->
 <section>
-    <h2>Projects</h2>
-    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+   /* Project Cards */
+.project-card {
+    width: 280px;
+    background:#f5f5f5;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    margin-bottom:20px;
+}
+.project-card img {
+    width:100%;
+    border-radius:8px;
+    margin-bottom:10px;
+}
+.project-card a {
+    text-decoration:none;
+    display:inline-block;
+    padding:8px 14px;
+    background:#0a4cff;
+    color:white;
+    border-radius:6px;
+    transition:0.3s;
+}
+.project-card a:hover {
+    background:#0033cc;
+}
 
-        <!-- Project 1 -->
-        <div style="width:280px; background:#f5f5f5; padding:15px; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
-            <img src="https://via.placeholder.com/280x150" alt="Binge Watch Online" style="width:100%; border-radius:8px; margin-bottom:10px;">
-            <h3>Binge Watch Online</h3>
-            <p>Cloud deployment with Azure & AWS, CDN, DNS, VMs/App Services, Storage, Load Balancing, and GitHub Actions automation.</p>
-            <a href="#" target="_blank" style="text-decoration:none; display:inline-block; padding:8px 14px; background:#0a4cff; color:white; border-radius:6px;">View Project</a>
-        </div>
-
-        <!-- Project 2 -->
-        <div style="width:280px; background:#f5f5f5; padding:15px; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
-            <img src="https://via.placeholder.com/280x150" alt="ARM Template Automation" style="width:100%; border-radius:8px; margin-bottom:10px;">
-            <h3>ARM Template Automation</h3>
-            <p>Automated infrastructure deployment using ARM templates with full documentation and screenshots.</p>
-            <a href="#" target="_blank" style="text-decoration:none; display:inline-block; padding:8px 14px; background:#0a4cff; color:white; border-radius:6px;">GitHub</a>
-        </div>
-
-        <!-- Project 3 -->
-        <div style="width:280px; background:#f5f5f5; padding:15px; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
-            <img src="https://via.placeholder.com/280x150" alt="DevOps CI/CD" style="width:100%; border-radius:8px; margin-bottom:10px;">
-            <h3>DevOps CI/CD Pipeline</h3>
-            <p>CI/CD workflow with GitHub Actions, Docker builds, automated testing, and deployment pipelines.</p>
-            <a href="#" target="_blank" style="text-decoration:none; display:inline-block; padding:8px 14px; background:#0a4cff; color:white; border-radius:6px;">GitHub</a>
-        </div>
-
-    </div>
-</section>
 
 
         @media (max-width: 600px) {
