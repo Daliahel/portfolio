@@ -2,272 +2,157 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Dalia Heli – Cloud & Software Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dalia Heli – Cloud Architect Portfolio</title>
 
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #ffffff;
             color: #333;
+            line-height: 1.6;
         }
 
-        h2 {
+        header {
+            background: linear-gradient(135deg, #0a4cff, #7ba9ff);
+            color: white;
             text-align: center;
-            margin-bottom: 30px;
+            padding: 80px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
         }
 
         section {
             max-width: 900px;
-            margin: 70px auto;
-            padding: 20px;
+            margin: 50px auto;
+            padding: 0 20px;
         }
 
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(135deg, #0a4cff, #7ba9ff);
-            color: white;
-            border-radius: 12px;
-        }
-
-        .hero img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
+        h2 {
+            border-bottom: 2px solid #0a4cff;
+            padding-bottom: 6px;
             margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-top: 15px;
-        }
-
-        /* CONTACT */
-        .contact {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .contact div {
-            text-align: center;
-        }
-
-        .contact img {
-            width: 28px;
-            margin-bottom: 6px;
-        }
-
-        .contact a {
-            text-decoration: none;
             color: #0a4cff;
         }
 
-        /* INFO GRID */
-        .info-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 35px;
-            margin-top: 40px;
-        }
-
-        .info-box {
-            width: 180px;
-            text-align: center;
-        }
-
-        .info-box img {
-            width: 40px;
-            margin-bottom: 10px;
-        }
-
-        /* SKILLS */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 35px;
-        }
-
-        .skill-item {
-            text-align: center;
-        }
-
-        .skill-item img {
-            width: 50px;
-            margin-bottom: 8px;
-        }
-
-        /* CARDS */
-        .card {
-            background: #f5f5f5;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-        }
-
-        .card h3 {
-            margin-top: 0;
-        }
-
         ul {
-            line-height: 1.8;
-            padding-left: 18px;
+            padding-left: 20px;
         }
 
-        /* PROJECTS */
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .project-card {
-            width: 280px;
+        .box {
             background: #f5f5f5;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-        }
-
-        .project-card img {
-            width: 100%;
+            padding: 20px;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         footer {
             text-align: center;
             padding: 30px;
             color: #666;
+            font-size: 14px;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 34px; }
-            .hero p { font-size: 16px; }
+        a {
+            color: #0a4cff;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <img src="https://via.placeholder.com/150" alt="Dalia Heli">
+<header>
     <h1>Dalia Heli</h1>
-    <p>Cloud Architect · DevOps · Azure · AWS</p>
-</div>
+    <p>Cloud Architecture · Software Development · DevOps</p>
+</header>
 
-<!-- CONTACT -->
-<section>
-    <h2>Contact</h2>
-    <div class="contact">
-        <div>
-            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png">
-            <p>Stockholm, Sweden</p>
-        </div>
-        <div>
-            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
-            <p>Da.lia42@hotmail.se</p>
-        </div>
-        <div>
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
-            <p><a href="https://github.com/Daliahel" target="_blank">GitHub</a></p>
-        </div>
-        <div>
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
-            <p><a href="https://www.linkedin.com/in/daliahel" target="_blank">LinkedIn</a></p>
-        </div>
-    </div>
-</section>
-
-<!-- PROFILE -->
 <section>
     <h2>Profile</h2>
-    <p style="text-align:center; font-size:17px; line-height:1.7;">
+    <p>
         Motivated IT professional specializing in cloud architecture (Azure & AWS),
-        software development, and DevOps.<br><br>
-        Experienced in building scalable, secure solutions, automating deployments,
-        and working across full-stack environments.<br><br>
+        software development, and DevOps. Experienced in building scalable solutions,
+        automating deployments, and working across full-stack environments.
         Analytical, solution-oriented, and committed to continuous learning and
         technical excellence.
     </p>
-
-    <div class="info-grid">
-        <div class="info-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/709/709790.png">
-            <p><b>Languages</b><br>Swedish (Native)<br>English · Arabic</p>
-        </div>
-        <div class="info-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png">
-            <p><b>Citizenship</b><br>Swedish</p>
-        </div>
-        <div class="info-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/5058/5058067.png">
-            <p><b>Focus Areas</b><br>Cloud · DevOps · Automation</p>
-        </div>
-    </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section>
-    <h2>Experience</h2>
-
-    <div class="card">
-        <h3>Cloud Architecture Project – Azure & AWS</h3>
-        <p><i>Cloud Architect / DevOps · Project-based (2024–2025)</i></p>
-        <ul>
-            <li>Designed and implemented a multi-cloud architecture using Azure and AWS</li>
-            <li>Deployed App Services, Virtual Machines (EC2), Blob Storage, S3 and CloudFront</li>
-            <li>Implemented Traffic Manager and CDN for high availability</li>
-            <li>Automated infrastructure and deployments using GitHub Actions</li>
-            <li>Applied cost optimization, scalability and security best practices</li>
-            <li>Integrated MySQL database and documented the full solution</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>Full-Stack Web Application Project</h3>
-        <p><i>Software Developer · Project-based (2024)</i></p>
-        <ul>
-            <li>Built responsive user interfaces using HTML, CSS and JavaScript</li>
-            <li>Developed backend services using Python and C#</li>
-            <li>Designed and integrated MySQL databases</li>
-            <li>Deployed and tested applications in Azure environments</li>
-            <li>Focused on clean code, performance and maintainability</li>
-        </ul>
-    </div>
+    <h2>Contact Information</h2>
+    <ul>
+        <li><b>Email:</b> Da.lia42@hotmail.se</li>
+        <li><b>Phone:</b> +46 73 761 79 48</li>
+        <li><b>Location:</b> Stockholm, Sweden</li>
+        <li><b>Citizenship:</b> Swedish</li>
+        <li><b>Languages:</b> Swedish (Native), English, Arabic</li>
+        <li><b>GitHub:</b> <a href="https://github.com/Daliahel" target="_blank">github.com/Daliahel</a></li>
+        <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/daliahel" target="_blank">linkedin.com/in/daliahel</a></li>
+    </ul>
 </section>
 
-<!-- SKILLS -->
 <section>
     <h2>Technical Skills</h2>
-    <div class="skills-grid">
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"><p>Azure</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg"><p>AWS</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><p>Python</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"><p>C#</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"><p>Docker</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg"><p>Terraform</p></div>
+    <ul>
+        <li><b>Programming:</b> Python, C#, JavaScript, SQL</li>
+        <li><b>Web:</b> HTML, CSS, Responsive Design</li>
+        <li><b>Cloud:</b> Microsoft Azure, Amazon Web Services (AWS)</li>
+        <li><b>Infrastructure as Code:</b> ARM Templates, Bicep, Terraform</li>
+        <li><b>Databases:</b> MySQL, PostgreSQL</li>
+        <li><b>DevOps & Tools:</b> GitHub, GitHub Actions, Azure DevOps, Docker</li>
+        <li><b>Architecture:</b> CI/CD, scalability, cost optimization</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Experience & Projects</h2>
+
+    <div class="box">
+        <h3>Cloud Architecture Project (Azure & AWS)</h3>
+        <ul>
+            <li>Designed and implemented a multi-cloud architecture using Azure and AWS</li>
+            <li>Deployed App Service, Virtual Machines (EC2), Blob Storage, S3, CloudFront, and Traffic Manager</li>
+            <li>Automated deployments using GitHub Actions</li>
+            <li>Applied cost optimization, scalability, and security best practices</li>
+            <li>Integrated MySQL database for persistent data storage</li>
+            <li>Documented architecture and deployment processes</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h3>Full-Stack Web Application Project</h3>
+        <ul>
+            <li>Built responsive user interfaces using HTML, CSS, and JavaScript</li>
+            <li>Developed backend logic using Python and C#</li>
+            <li>Designed and integrated MySQL databases</li>
+            <li>Deployed and tested applications in Azure environments</li>
+            <li>Focused on clean code, maintainability, and performance</li>
+        </ul>
     </div>
 </section>
 
-<!-- FOOTER -->
+<section>
+    <h2>Education & Certifications</h2>
+    <ul>
+        <li><b>AWS Certified Cloud Practitioner</b> – 2025</li>
+        <li><b>Simplilearn – Cloud Architect Program</b> (2022–2025)</li>
+        <li><b>Medieinstitutet – SharePoint Developer</b> (2016–2017)</li>
+        <li><b>Yrkeshögskola – E-learning Design</b> (2016–2017)</li>
+    </ul>
+</section>
+
 <footer>
-    © 2025 Dalia Heli · Cloud & DevOps Portfolio
+    © 2025 Dalia Heli · Cloud & Software Portfolio
 </footer>
 
 </body>
