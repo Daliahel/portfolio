@@ -1,209 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dalia Heli – Cloud Architect Portfolio</title>
-<style>
-/* GLOBAL */
-body {
-    margin:0;
-    font-family:'Segoe UI', Arial, sans-serif;
-    background:#f9f9f9;
-    color:#333;
-    scroll-behavior:smooth;
-}
-a {text-decoration:none;color:inherit;}
-section {max-width:1000px;margin:60px auto;padding:20px;}
-h2 {text-align:center;font-size:28px;margin-bottom:30px;color:#0a4cff;position:relative;}
-h2::after {content:"";display:block;width:60px;height:3px;background:#0a4cff;margin:8px auto 0;border-radius:2px;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalia Heli – Cloud & DevOps Portfolio</title>
 
-/* NAVIGATION */
-nav {position:fixed;width:100%;background:white;top:0;left:0;box-shadow:0 2px 12px rgba(0,0,0,0.08);z-index:1000;}
-nav ul {list-style:none;display:flex;justify-content:center;gap:40px;margin:0;padding:15px 0;}
-nav ul li a {font-weight:bold;color:#0a4cff;transition:0.3s;}
-nav ul li a.active, nav ul li a:hover {color:#0033cc;}
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #ffffff;
+            color: #333;
+        }
 
-/* HERO */
-.hero {text-align:center;padding:160px 20px 120px 20px;background:linear-gradient(135deg, #0a4cff, #7ba9ff);color:white;}
-.hero img {width:160px;height:160px;border-radius:50%;border:4px solid white;margin:0 auto 20px auto;transition:0.3s;}
-.hero img:hover {transform:scale(1.05);}
-.hero h1 {font-size:48px;margin:0;animation:fadeIn 1s ease;}
-.hero p {font-size:20px;margin-top:15px;animation:fadeIn 1.2s ease;}
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #0a4cff, #7ba9ff);
+            color: white;
+            border-radius: 12px;
+        }
+        .hero img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 46px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-top: 12px;
+        }
 
-/* CONTACT */
-.contact {display:flex;justify-content:center;gap:30px;flex-wrap:wrap;}
-.contact div {text-align:center;transition:0.3s;cursor:pointer;opacity:0;transform:translateY(20px);}
-.contact div:hover {transform:translateY(-5px);}
-.contact img {width:28px;margin-bottom:5px;}
-.contact a {color:#0a4cff;}
+        /* SECTIONS */
+        section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0a4cff;
+        }
 
-/* INFO GRID */
-.info-grid {display:flex;flex-wrap:wrap;justify-content:center;gap:35px;margin-top:35px;}
-.info-box {width:180px;text-align:center;padding:20px;background:white;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.08);transition:0.4s;opacity:0;transform:translateY(20px);}
-.info-box:hover {transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.15);background:linear-gradient(135deg,#0a4cff,#7ba9ff);color:white;}
-.info-box img {width:40px;margin-bottom:10px;transition:0.4s;}
+        /* CONTACT */
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .contact div {
+            text-align: center;
+        }
+        .contact img {
+            width: 28px;
+            margin-bottom: 6px;
+        }
+        .contact a {
+            text-decoration: none;
+            color: #0a4cff;
+            font-weight: 500;
+        }
 
-/* SKILLS */
-.skills-grid {display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
-.skill-item {text-align:center;background:white;padding:20px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.08);transition:0.4s;opacity:0;transform:translateY(20px);}
-.skill-item:hover {transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.15);background:linear-gradient(135deg,#0a4cff,#7ba9ff);color:white;}
-.skill-item img {width:50px;margin-bottom:8px;transition:0.4s;}
+        /* INFO GRID */
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 35px;
+            margin-top: 40px;
+        }
+        .info-box {
+            width: 180px;
+            text-align: center;
+        }
+        .info-box img {
+            width: 40px;
+            margin-bottom: 10px;
+        }
 
-/* PROJECTS */
-.projects {display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
-.project-card {width:300px;background:white;padding:20px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.08);transition:0.4s;cursor:pointer;opacity:0;transform:translateY(20px);}
-.project-card:hover {transform:translateY(-8px);box-shadow:0 12px 25px rgba(0,0,0,0.2);background:linear-gradient(135deg,#0a4cff,#7ba9ff);color:white;}
-.project-card img {width:100%;border-radius:10px;margin-bottom:10px;transition:0.3s;}
-.project-card h3 {font-size:18px;margin-bottom:10px;color:#0a4cff;transition:0.3s;}
-.project-card p {font-size:15px;line-height:1.5;transition:0.3s;}
+        /* SKILLS */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 35px;
+        }
+        .skill-item {
+            text-align: center;
+        }
+        .skill-item img {
+            width: 50px;
+            margin-bottom: 6px;
+        }
 
-/* LIGHTBOX */
-#lightbox {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:9999;}
-#lightbox img {max-width:90%;max-height:80%;border-radius:12px;box-shadow:0 0 30px rgba(0,0,0,0.6);}
-#close {position:absolute;top:20px;right:30px;font-size:40px;color:white;cursor:pointer;}
+        /* CARDS */
+        .card {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #0033cc;
+        }
+        .card ul {
+            padding-left: 20px;
+            line-height: 1.7;
+        }
 
-/* FOOTER */
-footer {text-align:center;padding:30px;color:#666;font-size:14px;}
+        /* PROJECTS */
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .project-card {
+            width: 280px;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        .project-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
 
-/* ANIMATIONS */
-@keyframes fadeIn {from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+        }
 
-/* RESPONSIVE */
-@media(max-width:600px){
-    .hero h1{font-size:32px;}
-    .hero p{font-size:16px;}
-    nav ul{flex-direction:column;gap:15px;}
-    .projects,.skills-grid,.info-grid{flex-direction:column;align-items:center;}
-}
-</style>
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 34px; }
+            .hero p { font-size: 16px; }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-    <ul>
-        <li><a href="#hero" class="nav-link">Home</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><a href="#profile" class="nav-link">Profile</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-    </ul>
-</nav>
-
 <!-- HERO -->
-<div class="hero" id="hero">
-    <img src="https://via.placeholder.com/160" alt="Dalia Heli">
-    <h1>Dalia Heli – Cloud Architect</h1>
-    <p>Azure · AWS · DevOps · Automation · Python</p>
+<div class="hero">
+    <img src="https://via.placeholder.com/150" alt="Dalia Heli">
+    <h1>Dalia Heli</h1>
+    <p>Cloud Architect · DevOps · Software Development</p>
 </div>
 
 <!-- CONTACT -->
-<section id="contact">
+<section>
     <h2>Contact</h2>
     <div class="contact">
-        <div><img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Location"><p>Stockholm, Sweden</p></div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email"><p>Da.lia42@hotmail.se</p></div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone"><p>+46 73 761 79 48</p></div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"><p><a href="https://www.linkedin.com/in/daliahel" target="_blank">LinkedIn</a></p></div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"><p><a href="https://github.com/Daliahel" target="_blank">GitHub</a></p></div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png">
+            <p>Stockholm, Sweden</p>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+            <p>Da.lia42@hotmail.se</p>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
+            <p>+46 73 761 79 48</p>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
+            <p><a href="https://www.linkedin.com/in/daliahel" target="_blank">LinkedIn</a></p>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
+            <p><a href="https://github.com/Daliahel" target="_blank">GitHub</a></p>
+        </div>
     </div>
 </section>
 
 <!-- PROFILE -->
-<section id="profile">
-    <h2>Profile & Objective</h2>
-    <p style="max-width:700px;margin:0 auto;text-align:center;font-size:17px;line-height:1.6;">
+<section>
+    <h2>Profile</h2>
+    <p style="text-align:center; font-size:17px; line-height:1.7;">
         Motivated IT professional specializing in cloud architecture (Azure & AWS), software development, and DevOps.<br><br>
-        Skilled in building scalable solutions, automating deployments, and working across full-stack environments.<br><br>
-        Analytical, solution-oriented, and committed to continuous learning and technical excellence.<br><br>
-        Objective: Contribute to teams by building secure, scalable, and efficient cloud solutions while continuously expanding technical expertise.
+        Experienced in building scalable solutions, automating deployments, and working across full-stack environments.<br><br>
+        Analytical, solution-oriented, and committed to continuous learning and technical excellence.
     </p>
+
     <div class="info-grid">
-        <div class="info-box"><img src="https://cdn-icons-png.flaticon.com/512/709/709790.png" alt="Languages"><p><b>Languages</b></p><p>Swedish (native), English, Arabic</p></div>
-        <div class="info-box"><img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Citizenship"><p><b>Citizenship</b></p><p>Swedish</p></div>
-        <div class="info-box"><img src="https://cdn-icons-png.flaticon.com/512/5058/5058067.png" alt="Focus Areas"><p><b>Focus Areas</b></p><p>Cloud Architecture · DevOps · Automation</p></div>
-        <div class="info-box"><img src="https://cdn-icons-png.flaticon.com/512/4341/4341025.png" alt="Personal Skills"><p><b>Personal Skills</b></p><p>Problem-solving · Communication · Teamwork · Fast learner · Innovation</p></div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/709/709790.png">
+            <p><b>Languages</b><br>Swedish (Native), English, Arabic</p>
+        </div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png">
+            <p><b>Citizenship</b><br>Swedish</p>
+        </div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/5058/5058067.png">
+            <p><b>Focus Areas</b><br>Cloud · DevOps · Automation</p>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+    <h2>Experience</h2>
+
+    <div class="card">
+        <h3>Cloud Architecture Project – Azure & AWS</h3>
+        <p><i>Cloud Architect / DevOps · 2024–2025</i></p>
+        <ul>
+            <li>Designed and implemented a multi-cloud architecture using Azure and AWS</li>
+            <li>Deployed App Service, Virtual Machines (EC2), Blob Storage, S3, CloudFront, and Traffic Manager</li>
+            <li>Automated infrastructure and deployments using GitHub Actions</li>
+            <li>Applied cost optimization, scalability, and security best practices</li>
+            <li>Integrated MySQL database for persistent data storage</li>
+            <li>Documented architecture and deployment workflows</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Full-Stack Web Application Project</h3>
+        <p><i>Software Developer · 2024</i></p>
+        <ul>
+            <li>Built responsive user interfaces using HTML, CSS, and JavaScript</li>
+            <li>Developed backend logic using Python and C#</li>
+            <li>Designed and integrated MySQL databases</li>
+            <li>Deployed and tested applications in Azure environments</li>
+            <li>Focused on clean, maintainable, and scalable code</li>
+        </ul>
     </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
+<section>
     <h2>Technical Skills</h2>
     <div class="skills-grid">
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><p>Python</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"><p>C#</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><p>JavaScript</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sql/sql-original.svg" alt="SQL"><p>SQL</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><p>HTML</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><p>CSS</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure"><p>Azure</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS"><p>AWS</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><p>GitHub</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><p>Docker</p></div>
-        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform"><p>Terraform</p></div>
+        <div class="skill-item"><p>Azure</p></div>
+        <div class="skill-item"><p>AWS</p></div>
+        <div class="skill-item"><p>Python</p></div>
+        <div class="skill-item"><p>C#</p></div>
+        <div class="skill-item"><p>JavaScript</p></div>
+        <div class="skill-item"><p>SQL</p></div>
+        <div class="skill-item"><p>Docker</p></div>
+        <div class="skill-item"><p>Terraform</p></div>
+        <div class="skill-item"><p>GitHub</p></div>
     </div>
 </section>
-
-<!-- PROJECTS -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-        <div class="project-card" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://via.placeholder.com/300x160?text=Cloud+Architecture" alt="Cloud Architecture">
-            <h3>Cloud Architecture Project</h3>
-            <p>Multi-cloud architecture (Azure & AWS), automated deployments, cost optimization, MySQL integration.</p>
-        </div>
-        <div class="project-card" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://via.placeholder.com/300x160?text=Full-Stack+Website" alt="Full-Stack Website">
-            <h3>Full-Stack Website Project</h3>
-            <p>Responsive UI (HTML/CSS/JS), backend logic (Python/C#), MySQL database, deployed and tested on Azure.</p>
-        </div>
-    </div>
-</section>
-
-<!-- LIGHTBOX -->
-<div id="lightbox" onclick="closeLightbox()">
-    <span id="close">&times;</span>
-    <img id="lightbox-img" src="">
-</div>
 
 <!-- FOOTER -->
 <footer>
-    © 2025 Dalia Heli – Built with ❤️ and Cloud
+    © 2025 Dalia Heli · Cloud & DevOps Portfolio
 </footer>
-
-<script>
-// Fade-in animations
-const faders = document.querySelectorAll('.contact div, .info-box, .skill-item, .project-card');
-const appearOptions = {threshold:0.2, rootMargin:"0px 0px -50px 0px"};
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        entry.target.style.opacity=1;
-        entry.target.style.transform="translateY(0)";
-        observer.unobserve(entry.target);
-    });
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
-
-// Lightbox
-function openLightbox(src){document.getElementById('lightbox-img').src=src; document.getElementById('lightbox').style.display='flex';}
-function closeLightbox(){document.getElementById('lightbox').style.display='none';}
-
-// Active nav link on scroll
-const sections=document.querySelectorAll('section, .hero');
-const navLi=document.querySelectorAll('nav ul li a');
-window.addEventListener('scroll',()=>{
-    let current='';
-    sections.forEach(sec=>{
-        const top=sec.offsetTop-70;
-        const height=sec.offsetHeight;
-        if(pageYOffset>=top && pageYOffset<top+height){current=sec.id;}
-    });
-    navLi.forEach(li=>{li.classList.remove('active');if(li.getAttribute('href')=='#'+current) li.classList.add('active');});
-});
-</script>
 
 </body>
 </html>
