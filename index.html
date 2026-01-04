@@ -1,158 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dalia Heli – Cloud & Software Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dalia Heli – Portfolio</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-            color: #333;
-            line-height: 1.6;
-        }
+    h1, h2, h3 {
+        margin: 0;
+    }
 
-        header {
-            background: linear-gradient(135deg, #0a4cff, #7ba9ff);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+    h1 {
+        font-size: 48px;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 42px;
-        }
+    h2 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 25px;
+        color: #0a4cff;
+    }
 
-        header p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
+    h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
 
-        section {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
+    /* HERO SECTION */
+    .hero {
+        text-align: center;
+        padding: 120px 20px;
+        background: linear-gradient(135deg, #0a4cff, #7ba9ff);
+        color: white;
+        border-radius: 12px;
+    }
 
-        h2 {
-            border-bottom: 2px solid #0a4cff;
-            padding-bottom: 6px;
-            margin-bottom: 20px;
-            color: #0a4cff;
-        }
+    .hero img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid white;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
 
-        ul {
-            padding-left: 20px;
-        }
+    .hero p {
+        font-size: 20px;
+        margin-top: 15px;
+    }
 
-        .box {
-            background: #f5f5f5;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
+    section {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #666;
-            font-size: 14px;
-        }
+    /* CONTACT */
+    .contact {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
 
-        a {
-            color: #0a4cff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
+    .contact div {
+        text-align: center;
+    }
+
+    .contact img {
+        width: 28px;
+        margin-bottom: 5px;
+    }
+
+    .contact a {
+        color: #0a4cff;
+        text-decoration: none;
+    }
+
+    /* ABOUT / PROFILE */
+    .info-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 35px;
+        margin-top: 25px;
+    }
+
+    .info-box {
+        width: 180px;
+        text-align: center;
+    }
+
+    .info-box img {
+        width: 40px;
+        margin-bottom: 10px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .skill-item {
+        text-align: center;
+        width: 100px;
+    }
+
+    .skill-item img {
+        width: 50px;
+        margin-bottom: 8px;
+    }
+
+    /* PROJECT CARDS */
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .project-card {
+        width: 280px;
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .project-card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .project-card a {
+        display: inline-block;
+        padding: 8px 14px;
+        background: #0a4cff;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        margin-top: 5px;
+        transition: 0.3s;
+    }
+
+    .project-card a:hover {
+        background: #0033cc;
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px;
+        color: #666;
+        font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+        .hero h1 { font-size: 34px; }
+        .hero p { font-size: 16px; }
+        .info-box, .skill-item { width: 120px; }
+        section { margin: 30px 15px; }
+    }
+</style>
 </head>
-
 <body>
 
-<header>
-    <h1>Dalia Heli</h1>
-    <p>Cloud Architecture · Software Development · DevOps</p>
-</header>
+<!-- HERO -->
+<div class="hero">
+    <img src="https://via.placeholder.com/150" alt="Dalia Heli">
+    <h1>Dalia Heli – Cloud Architect</h1>
+    <p>Azure · AWS · DevOps · Automation · Python</p>
+</div>
 
+<!-- CONTACT -->
+<section>
+    <h2>Contact</h2>
+    <div class="contact">
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Location">
+            <p>Stockholm, Sweden</p>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email">
+            <p>Da.lia42@hotmail.se</p>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone">
+            <p>+46 73 761 79 48</p>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            <p><a href="https://www.linkedin.com/in/daliahel" target="_blank">LinkedIn</a></p>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+            <p><a href="https://github.com/Daliahel" target="_blank">GitHub</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT / PROFILE -->
 <section>
     <h2>Profile</h2>
-    <p>
-        Motivated IT professional specializing in cloud architecture (Azure & AWS),
-        software development, and DevOps. Experienced in building scalable solutions,
-        automating deployments, and working across full-stack environments.
-        Analytical, solution-oriented, and committed to continuous learning and
-        technical excellence.
+    <p style="text-align:center;">
+        Motivated IT professional specializing in <b>cloud architecture</b> (Azure & AWS), <b>software development</b>, and <b>DevOps</b>. 
+        Skilled in building scalable solutions, automating deployments, and working across full-stack environments. 
+        Analytical, solution-oriented, and committed to continuous learning and technical excellence.
     </p>
+
+    <div class="info-grid">
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/709/709790.png" alt="Languages">
+            <p><b>Languages</b></p>
+            <p>Swedish, English, Arabic</p>
+        </div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Citizenship">
+            <p><b>Citizenship</b></p>
+            <p>Swedish</p>
+        </div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/5058/5058067.png" alt="Focus Areas">
+            <p><b>Focus Areas</b></p>
+            <p>Cloud · DevOps · Automation</p>
+        </div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/4341/4341025.png" alt="Personal Skills">
+            <p><b>Personal Skills</b></p>
+            <p>Problem-solving · Communication · Teamwork · Fast learner · Innovation</p>
+        </div>
+    </div>
 </section>
 
-<section>
-    <h2>Contact Information</h2>
-    <ul>
-        <li><b>Email:</b> Da.lia42@hotmail.se</li>
-        <li><b>Phone:</b> +46 73 761 79 48</li>
-        <li><b>Location:</b> Stockholm, Sweden</li>
-        <li><b>Citizenship:</b> Swedish</li>
-        <li><b>Languages:</b> Swedish (Native), English, Arabic</li>
-        <li><b>GitHub:</b> <a href="https://github.com/Daliahel" target="_blank">github.com/Daliahel</a></li>
-        <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/daliahel" target="_blank">linkedin.com/in/daliahel</a></li>
-    </ul>
-</section>
-
+<!-- SKILLS -->
 <section>
     <h2>Technical Skills</h2>
-    <ul>
-        <li><b>Programming:</b> Python, C#, JavaScript, SQL</li>
-        <li><b>Web:</b> HTML, CSS, Responsive Design</li>
-        <li><b>Cloud:</b> Microsoft Azure, Amazon Web Services (AWS)</li>
-        <li><b>Infrastructure as Code:</b> ARM Templates, Bicep, Terraform</li>
-        <li><b>Databases:</b> MySQL, PostgreSQL</li>
-        <li><b>DevOps & Tools:</b> GitHub, GitHub Actions, Azure DevOps, Docker</li>
-        <li><b>Architecture:</b> CI/CD, scalability, cost optimization</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Experience & Projects</h2>
-
-    <div class="box">
-        <h3>Cloud Architecture Project (Azure & AWS)</h3>
-        <ul>
-            <li>Designed and implemented a multi-cloud architecture using Azure and AWS</li>
-            <li>Deployed App Service, Virtual Machines (EC2), Blob Storage, S3, CloudFront, and Traffic Manager</li>
-            <li>Automated deployments using GitHub Actions</li>
-            <li>Applied cost optimization, scalability, and security best practices</li>
-            <li>Integrated MySQL database for persistent data storage</li>
-            <li>Documented architecture and deployment processes</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h3>Full-Stack Web Application Project</h3>
-        <ul>
-            <li>Built responsive user interfaces using HTML, CSS, and JavaScript</li>
-            <li>Developed backend logic using Python and C#</li>
-            <li>Designed and integrated MySQL databases</li>
-            <li>Deployed and tested applications in Azure environments</li>
-            <li>Focused on clean code, maintainability, and performance</li>
-        </ul>
+    <div class="skills-grid">
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><p>Python</p></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"><p>C#</p></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><p>JavaScript</p></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sql/sql-original.svg" alt="SQL"><p>SQL</p></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><p>HTML</p></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><p>CSS</p></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure"><p>Azure</p></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS"><p>AWS</p></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><p>GitHub</p></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><p>Docker</p></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform"><p>Terraform</p></div>
     </div>
 </section>
 
+<!-- PROJECTS -->
 <section>
-    <h2>Education & Certifications</h2>
-    <ul>
-        <li><b>AWS Certified Cloud Practitioner</b> – 2025</li>
-        <li><b>Simplilearn – Cloud Architect Program</b> (2022–2025)</li>
-        <li><b>Medieinstitutet – SharePoint Developer</b> (2016–2017)</li>
-        <li><b>Yrkeshögskola – E-learning Design</b> (2016–2017)</li>
-    </ul>
+    <h2>Projects</h2>
+    <div class="projects">
+
+        <div class="project-card">
+            <img src="https://via.placeholder.com/280x150?text=Cloud+Architecture" alt="Cloud Architecture">
+            <h3>Cloud Architecture Project</h3>
+            <p>Multi-cloud architecture using Azure & AWS. App Services, VM/EC2, Storage/S3, CloudFront, Traffic Manager. GitHub Actions for automation, cost optimization, MySQL integration.</p>
+            <a href="https://github.com/Daliahel/binge-watch-online" target="_blank">View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <img src="https://via.placeholder.com/280x150?text=Full-Stack+Website" alt="Full-Stack Website">
+            <h3>Full-Stack Website Project</h3>
+            <p>Responsive UI (HTML, CSS, JS), backend logic (Python, C#), MySQL integration. Deployed on Azure environment.</p>
+            <a href="https://github.com/Daliahel/arm-template-automation" target="_blank">View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <img src="https://via.placeholder.com/280x150?text=DevOps+Pipeline" alt="DevOps CI/CD Pipeline">
+            <h3>DevOps CI/CD Pipeline</h3>
+            <p>CI/CD workflows with GitHub Actions and Docker. Automated testing, building, and deployment pipelines.</p>
+            <a href="https://github.com/Daliahel/devops-ci-cd" target="_blank">View on GitHub</a>
+        </div>
+
+    </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-    © 2025 Dalia Heli · Cloud & Software Portfolio
+    © 2025 Dalia Heli – Built with ❤️ and Cloud
 </footer>
 
 </body>
