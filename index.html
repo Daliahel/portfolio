@@ -1,179 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dalia Heli – Cloud Architect Portfolio</title>
-    <style>
-        /* GENERAL */
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        a { text-decoration: none; color: inherit; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dalia Heli – Cloud Architect Portfolio</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+    }
 
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(135deg, #0a4cff, #7ba9ff);
-            color: white;
-        }
-        .hero img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
-            margin-bottom: 20px;
-        }
-        .hero h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 20px;
-            margin-top: 10px;
-            font-weight: 400;
-        }
+    /* HERO SECTION */
+    .hero {
+        text-align: center;
+        padding: 120px 20px;
+        background: linear-gradient(135deg, #0a4cff, #7ba9ff);
+        color: white;
+    }
+    .hero img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 4px solid white;
+        margin-bottom: 20px;
+    }
+    .hero h1 {
+        font-size: 48px;
+        margin: 0 0 10px 0;
+    }
+    .hero p {
+        font-size: 20px;
+        margin-top: 10px;
+    }
 
-        /* SECTION HEADINGS */
-        section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
-        h2 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 40px;
-            color: #0a4cff;
-        }
+    section {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+    h2 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 30px;
+        color: #0a4cff;
+        border-bottom: 2px solid #0a4cff;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
 
-        /* CONTACT GRID */
-        .contact {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 20px;
-        }
-        .contact div {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-        .contact div:hover { transform: translateY(-5px); }
-        .contact img { width: 32px; margin-bottom: 10px; }
+    /* CONTACT */
+    .contact {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    .contact div {
+        text-align: center;
+    }
+    .contact img {
+        width: 36px;
+        margin-bottom: 8px;
+    }
+    .contact a {
+        color: #0a4cff;
+        text-decoration: none;
+        font-weight: bold;
+    }
 
-        /* ABOUT ME */
-        .about {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .about p { max-width: 700px; margin: 0 auto; font-size: 17px; }
+    /* PROFILE */
+    .profile {
+        text-align: center;
+        font-size: 17px;
+        max-width: 800px;
+        margin: 0 auto 40px auto;
+    }
 
-        /* INFO GRID */
-        .info-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        .info-box {
-            width: 200px;
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-        .info-box:hover { transform: translateY(-5px); }
-        .info-box img { width: 45px; margin-bottom: 12px; }
-        .info-box p b { display: block; margin-bottom: 5px; color: #0a4cff; }
+    /* INFO GRID */
+    .info-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 30px;
+    }
+    .info-box {
+        width: 200px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        text-align: center;
+        transition: 0.3s;
+    }
+    .info-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .info-box img {
+        width: 50px;
+        margin-bottom: 12px;
+    }
+    .info-box p {
+        margin: 6px 0;
+    }
 
-        /* SKILLS GRID */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-        }
-        .skill-item {
-            text-align: center;
-            width: 100px;
-            background: white;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-        .skill-item:hover { transform: translateY(-5px); }
-        .skill-item img { width: 50px; margin-bottom: 8px; }
+    /* SKILLS */
+    .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .skill-item {
+        text-align: center;
+        width: 120px;
+    }
+    .skill-item img {
+        width: 50px;
+        margin-bottom: 6px;
+    }
 
-        /* PROJECTS */
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-        }
-        .project-card {
-            width: 300px;
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        }
-        .project-card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 12px;
-        }
-        .project-card h3 { margin-bottom: 10px; color: #0a4cff; }
-        .project-card p { font-size: 15px; margin-bottom: 15px; }
-        .project-card a {
-            padding: 10px 15px;
-            background: #0a4cff;
-            color: white;
-            border-radius: 8px;
-            display: inline-block;
-            transition: 0.3s;
-        }
-        .project-card a:hover { background: #0033cc; }
+    /* PROJECTS */
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+    .project-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        overflow: hidden;
+        transition: 0.3s;
+    }
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    .project-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+    .project-card h3 {
+        margin: 15px;
+        font-size: 20px;
+        color: #0a4cff;
+    }
+    .project-card p {
+        margin: 0 15px 15px 15px;
+        font-size: 15px;
+    }
 
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #666;
-            background: #f0f0f0;
-        }
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        background: #f0f0f0;
+        color: #666;
+        font-size: 15px;
+    }
 
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
-        }
-        @media (max-width: 480px) {
-            .skills-grid, .info-grid, .contact, .projects { flex-direction: column; align-items: center; }
-        }
-    </style>
+    /* MOBILE */
+    @media (max-width: 600px) {
+        .hero h1 { font-size: 32px; }
+        .hero p { font-size: 16px; }
+    }
+</style>
 </head>
 <body>
 
     <!-- HERO -->
     <div class="hero">
-        <img src="https://via.placeholder.com/150" alt="Dalia Heli">
-        <h1>Dalia Heli – Cloud Architect</h1>
-        <p>Turning cloud ideas into scalable solutions</p>
+        <img src="https://via.placeholder.com/160" alt="Dalia Heli">
+        <h1>Dalia Heli</h1>
+        <p>Cloud Architect | Azure & AWS | DevOps | Automation | Python</p>
     </div>
 
     <!-- CONTACT -->
@@ -186,7 +193,7 @@
             </div>
             <div>
                 <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email">
-                <p><a href="mailto:Da.lia42@hotmail.se">Da.lia42@hotmail.se</a></p>
+                <p>Da.lia42@hotmail.se</p>
             </div>
             <div>
                 <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone">
@@ -203,33 +210,34 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- PROFILE -->
     <section>
         <h2>Profile</h2>
-        <div class="about">
-            <p>
-                Motivated IT professional specializing in cloud architecture (Azure & AWS), software development, and DevOps.<br><br>
-                Skilled in building scalable solutions, automating deployments, and working across full-stack environments.<br><br>
-                Analytical, solution-oriented, and committed to continuous learning and technical excellence.
-            </p>
-        </div>
-
+        <p class="profile">
+            Motivated IT professional specializing in cloud architecture (Azure & AWS), software development, and DevOps. 
+            Skilled in building scalable solutions, automating deployments, and working across full-stack environments. 
+            Analytical, solution-oriented, and committed to continuous learning and technical excellence.
+        </p>
         <div class="info-grid">
             <div class="info-box">
                 <img src="https://cdn-icons-png.flaticon.com/512/709/709790.png" alt="Languages">
-                <p><b>Languages</b>Swedish (native), English, Arabic</p>
+                <p><b>Languages</b></p>
+                <p>Swedish (native), English, Arabic</p>
             </div>
             <div class="info-box">
                 <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Citizenship">
-                <p><b>Citizenship</b>Swedish</p>
+                <p><b>Citizenship</b></p>
+                <p>Swedish</p>
             </div>
             <div class="info-box">
                 <img src="https://cdn-icons-png.flaticon.com/512/5058/5058067.png" alt="Focus Areas">
-                <p><b>Focus Areas</b>Cloud Architecture · DevOps · Automation</p>
+                <p><b>Focus Areas</b></p>
+                <p>Cloud Architecture · DevOps · Automation</p>
             </div>
             <div class="info-box">
-                <img src="https://cdn-icons-png.flaticon.com/512/4341/4341025.png" alt="Skills">
-                <p><b>Personal Skills</b>Problem-solving · Communication · Teamwork · Fast learner · Innovation</p>
+                <img src="https://cdn-icons-png.flaticon.com/512/4341/4341025.png" alt="Soft Skills">
+                <p><b>Personal Skills</b></p>
+                <p>Problem-solving · Communication · Teamwork · Fast learner · Innovation</p>
             </div>
         </div>
     </section>
@@ -257,12 +265,12 @@
         <h2>Projects</h2>
         <div class="projects">
             <div class="project-card">
-                <img src="https://via.placeholder.com/300x160?text=Cloud+Architecture" alt="Cloud Architecture">
+                <img src="https://via.placeholder.com/280x150?text=Cloud+Architecture" alt="Cloud Architecture">
                 <h3>Cloud Architecture Project</h3>
                 <p>Designed multi-cloud architecture (Azure & AWS) with App Service, VM/EC2, Storage/S3, CloudFront, Traffic Manager, automated deployments via GitHub Actions, cost optimization, and MySQL integration.</p>
             </div>
             <div class="project-card">
-                <img src="https://via.placeholder.com/300x160?text=Full-Stack+Website" alt="Full-Stack Website">
+                <img src="https://via.placeholder.com/280x150?text=Full-Stack+Website" alt="Full-Stack Website">
                 <h3>Full-Stack Website Project</h3>
                 <p>Built responsive UI (HTML, CSS, JS), backend logic (Python, C#), MySQL database integration, deployed and tested on Azure environment.</p>
             </div>
