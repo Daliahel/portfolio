@@ -108,7 +108,11 @@ footer a:hover { color: #ff7f50; }
 }
 .contact-section button:hover { transform: scale(1.05); }
 
-@media (max-width: 700px) { .projects { flex-direction: column; align-items: center; } .skills { justify-content: center; } }
+@media (max-width: 700px) { 
+  .projects { flex-direction: column; align-items: center; } 
+  .skills { justify-content: center; } 
+  #about div { flex-direction: column; text-align:center; }
+}
 </style>
 </head>
 <body>
@@ -130,26 +134,30 @@ footer a:hover { color: #ff7f50; }
 </div>
 </header>
 
-<section id="about" style="background: #e0f4ff; padding:50px 20px; text-align:center; border-radius:20px; max-width:900px; margin:50px auto;">
-  <h2 style="font-size:2em; margin-bottom:20px; color:#0078d4;">About Me</h2>
-  <p style="font-size:1.1em; line-height:1.6; margin-bottom:15px;">
-    Hello! My name is <strong>Dalia Heli</strong>, an IT graduate based in Stockholm, passionate about cloud technologies and DevOps.
-  </p>
-  <p style="font-size:1.1em; line-height:1.6; margin-bottom:15px;">
-    I enjoy learning new tools and developing projects in cloud environments like AWS and Azure. I also work with Python, Docker, and web development (HTML/CSS).
-  </p>
-  <p style="font-size:1.1em; line-height:1.6; margin-bottom:25px;">
-    I am enthusiastic, eager to grow my skills, and excited to contribute to innovative tech projects.
-  </p>
-  <div class="hero-buttons">
-    <a href="CV_Dalia_Heli.pdf.pdf" target="_blank" class="btn">Download CV</a>
-    <a href="mailto:Da.lia42@hotmail.se" class="btn">Email Me</a>
+<section id="about" style="background: #e0f4ff; padding:50px 20px; border-radius:20px; max-width:900px; margin:50px auto;">
+  <h2 style="font-size:2em; margin-bottom:30px; color:#0078d4; text-align:center;">About Me</h2>
+  <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:30px;">
+    <img src="IMG_9134.Jpeg" alt="Dalia Heli" style="width:220px; height:220px; border-radius:50%; object-fit:cover; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+    <div style="max-width:550px; text-align:left;">
+      <p style="font-size:1.1em; line-height:1.6; margin-bottom:15px;">
+        Hello! My name is <strong>Dalia Heli</strong>, an IT graduate based in Stockholm, passionate about cloud technologies and DevOps.
+      </p>
+      <p style="font-size:1.1em; line-height:1.6; margin-bottom:15px;">
+        I enjoy learning new tools and developing projects in cloud environments like AWS and Azure. I also work with Python, Docker, and web development (HTML/CSS).
+      </p>
+      <p style="font-size:1.1em; line-height:1.6; margin-bottom:25px;">
+        I am enthusiastic, eager to grow my skills, and excited to contribute to innovative tech projects.
+      </p>
+      <div class="hero-buttons">
+        <a href="CV_Dalia_Heli.pdf.pdf" target="_blank" class="btn">Download CV</a>
+        <a href="mailto:Da.lia42@hotmail.se" class="btn">Email Me</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="projects" id="projects">
 
-<!-- Project cards -->
 <div class="project-card">
     <div class="project-labels"><span class="cloud">Cloud</span><span class="devops">DevOps</span></div>
     <img src="Cloud architecture.png" alt="Cloud Architecture">
