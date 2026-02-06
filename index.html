@@ -214,6 +214,29 @@ footer a { color: #00bfff; text-decoration: none; margin: 0 10px; }
     100% { background: linear-gradient(145deg, #ffffff, #e0f0ff); }
 }
 
+/* ---------- Modal Text Fade & Slide ---------- */
+.modal-content h2,
+.modal-content p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.modal.show .modal-content h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+.modal.show .modal-content img {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+.modal.show .modal-content p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
 .close {
     position: absolute;
     top: 10px; right: 15px;
