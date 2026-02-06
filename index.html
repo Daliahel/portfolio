@@ -66,8 +66,6 @@ header p {
     margin: 50px 20px;
     gap: 25px;
 }
-
-/* Project Card */
 .project-card {
     background-color: white;
     border-radius: 10px;
@@ -156,7 +154,36 @@ footer a {
     margin: 0 10px;
 }
 
-/* Responsiv */
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    text-align: left;
+    position: relative;
+}
+.close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Responsive */
 @media (max-width: 700px) {
     .projects {
         flex-direction: column;
@@ -192,7 +219,7 @@ footer a {
 <div class="project-card">
     <img src="Cloud architecture.png" alt="Cloud Architecture Project">
     <h2>Cloud Architecture Project</h2>
-    <p>Designed and deployed a scalable cloud architecture in AWS and Azure, implementing automation and CI/CD pipelines.</p>
+    <p>Designed and deployed a scalable cloud architecture in AWS and Azure.</p>
     <p class="result">Result: 99.9% uptime, 30% cost reduction</p>
     <div class="tech-icons">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
@@ -200,14 +227,14 @@ footer a {
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
     </div>
-    <div class="overlay"><a href="#">View Details</a></div>
+    <div class="overlay"><a href="#" data-modal="modal1">View Details</a></div>
 </div>
 
 <!-- Project 2 -->
 <div class="project-card">
     <img src="Frontend-vs.-Backend-ENG.png" alt="Fullstack Project">
     <h2>Fullstack Demo Application</h2>
-    <p>Built a fullstack web application with frontend in HTML/CSS and backend using Python Flask. Containerized with Docker for deployment.</p>
+    <p>Built a fullstack web application with frontend in HTML/CSS and backend using Python Flask.</p>
     <p class="result">Result: Fast deployment, 100% test coverage</p>
     <div class="tech-icons">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
@@ -215,38 +242,75 @@ footer a {
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
     </div>
-    <div class="overlay"><a href="#">View Details</a></div>
+    <div class="overlay"><a href="#" data-modal="modal2">View Details</a></div>
 </div>
 
 <!-- Project 3 -->
 <div class="project-card">
     <img src="simple-enterprise-integration.png" alt="Enterprise Integration Project">
     <h2>Enterprise Integration</h2>
-    <p>Implemented enterprise system integration with automated workflows, improving data flow between departments.</p>
+    <p>Implemented enterprise system integration with automated workflows.</p>
     <p class="result">Result: 40% faster processing, zero manual errors</p>
     <div class="tech-icons">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
     </div>
-    <div class="overlay"><a href="#">View Details</a></div>
+    <div class="overlay"><a href="#" data-modal="modal3">View Details</a></div>
 </div>
 
 <!-- Project 4 -->
 <div class="project-card">
     <img src="cloud-services-isometric-composition-with-big-cloud-computing-infrastructure-elements-connected-with-dashed-lines-vector-illustration_1284-30495.avif" alt="Cloud Services Visualization">
     <h2>Cloud Services Visualization</h2>
-    <p>Created interactive cloud services visualization to help stakeholders understand infrastructure architecture and dependencies.</p>
+    <p>Created interactive cloud services visualization to help stakeholders understand infrastructure.</p>
     <p class="result">Result: Improved stakeholder understanding, faster onboarding</p>
     <div class="tech-icons">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
     </div>
-    <div class="overlay"><a href="#">View Details</a></div>
+    <div class="overlay"><a href="#" data-modal="modal4">View Details</a></div>
 </div>
 
 </section>
+
+<!-- Modals -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Cloud Architecture Project</h2>
+    <p>Designed a scalable cloud architecture using AWS and Azure. Automated deployment with CI/CD pipelines and reduced costs by 30%.</p>
+    <p><strong>Tech Stack:</strong> Azure, AWS, GitHub, Docker, Python</p>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Fullstack Demo Application</h2>
+    <p>Frontend built with HTML/CSS and backend with Python Flask. Dockerized for easy deployment. 100% test coverage.</p>
+    <p><strong>Tech Stack:</strong> HTML5, CSS3, Python, Docker</p>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Enterprise Integration</h2>
+    <p>Automated workflows for enterprise system integration. Improved processing speed by 40% and eliminated manual errors.</p>
+    <p><strong>Tech Stack:</strong> Python, Docker, GitHub</p>
+  </div>
+</div>
+
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Cloud Services Visualization</h2>
+    <p>Interactive visualization for stakeholders to understand cloud infrastructure and dependencies. Improved onboarding process.</p>
+    <p><strong>Tech Stack:</strong> AWS, Azure, GitHub</p>
+  </div>
+</div>
 
 <footer>
 <p>📧 <a href="mailto:Da.lia42@hotmail.se">Da.lia42@hotmail.se</a> · 📍 Stockholm</p>
@@ -267,6 +331,33 @@ const observer = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.2 });
 cards.forEach(card => observer.observe(card));
+
+// Modal functionality
+const modalLinks = document.querySelectorAll('.overlay a');
+const modals = document.querySelectorAll('.modal');
+const closeBtns = document.querySelectorAll('.close');
+
+modalLinks.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const modalId = link.getAttribute('data-modal');
+        document.getElementById(modalId).style.display = 'flex';
+    });
+});
+
+closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.parentElement.parentElement.style.display = 'none';
+    });
+});
+
+window.addEventListener('click', e => {
+    modals.forEach(modal => {
+        if(e.target == modal){
+            modal.style.display = 'none';
+        }
+    });
+});
 </script>
 
 </body>
