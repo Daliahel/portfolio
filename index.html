@@ -10,7 +10,7 @@ body {
     background-color: #f5f5f5;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth; /* Smooth scroll */
+    scroll-behavior: smooth;
 }
 
 /* Header */
@@ -19,9 +19,27 @@ header {
     color: white;
     text-align: center;
     padding: 60px 20px;
+    overflow: hidden;
 }
-header h1 { margin: 10px 0; font-size: 2.8em; }
-header p { margin: 0 0 20px 0; font-size: 1.2em; }
+header h1 {
+    margin: 10px 0;
+    font-size: 2.8em;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: titleFade 1s forwards;
+}
+header p {
+    margin: 0 0 20px 0;
+    font-size: 1.2em;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: titleFade 1s 0.3s forwards;
+}
+@keyframes titleFade {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero buttons */
 .hero-buttons { margin-top: 20px; }
 .hero-buttons .btn {
     background-color: white;
@@ -32,24 +50,49 @@ header p { margin: 0 0 20px 0; font-size: 1.2em; }
     margin: 0 10px;
     font-weight: bold;
     transition: 0.3s;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: titleFade 0.5s 0.6s forwards;
 }
 .hero-buttons .btn:hover {
     background-color: #005a9e;
     color: white;
-    transform: scale(1.05); /* Liten zoom-effekt */
+    transform: scale(1.05);
 }
 
 /* Skills */
-.skills { display: flex; justify-content: center; margin-top: 30px; gap: 15px; flex-wrap: wrap; }
+.skills {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 .skills img {
     width: 50px;
     height: 50px;
     transition: transform 0.3s;
+    opacity: 0;
+    transform: scale(0);
+    animation: iconPop 0.5s forwards;
 }
-.skills img:hover { transform: translateY(-5px); } /* Hoppeffekt */
+.skills img:nth-child(1) { animation-delay: 0.8s; }
+.skills img:nth-child(2) { animation-delay: 1s; }
+.skills img:nth-child(3) { animation-delay: 1.2s; }
+.skills img:nth-child(4) { animation-delay: 1.4s; }
+.skills img:nth-child(5) { animation-delay: 1.6s; }
+@keyframes iconPop {
+    to { opacity: 1; transform: scale(1); }
+}
 
 /* Projects */
-.projects { display: flex; flex-wrap: wrap; justify-content: center; margin: 50px 20px; gap: 25px; }
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 20px;
+    gap: 25px;
+}
 .project-card {
     background-color: white;
     border-radius: 10px;
@@ -58,24 +101,31 @@ header p { margin: 0 0 20px 0; font-size: 1.2em; }
     overflow: hidden;
     text-align: center;
     padding-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s, transform 0.5s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     transform: translateY(50px);
-    position: relative;
 }
-.project-card.visible { opacity: 1; transform: translateY(0); }
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 .project-card:hover {
-    transform: translateY(-10px); /* Lyfter upp kortet lite */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Starkare skugga */
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 .project-card img { width: 100%; height: 200px; object-fit: cover; }
 .project-card h2 { margin: 15px 0 10px 0; }
 .project-card p { margin: 0 20px 10px 20px; font-size: 0.95em; color: #333; }
 .project-card .result { font-weight: bold; color: #0078d4; margin-bottom: 10px; }
 
-/* Tech icons */
-.tech-icons img { width: 30px; height: 30px; margin: 0 6px; transition: transform 0.3s; }
-.tech-icons img:hover { transform: scale(1.2); } /* Hoppeffekt på hover */
+/* Tech icons inside projects */
+.tech-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 6px;
+    transition: transform 0.3s;
+}
+.tech-icons img:hover { transform: scale(1.2); }
 
 /* Hover overlay */
 .project-card .overlay {
@@ -84,8 +134,11 @@ header p { margin: 0 0 20px 0; font-size: 1.2em; }
     width: 100%; height: 100%;
     background-color: rgba(0,0,0,0.6);
     color: white;
-    display: flex; justify-content: center; align-items: center;
-    opacity: 0; transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
 }
 .project-card:hover .overlay { opacity: 1; }
 .overlay a {
@@ -160,7 +213,6 @@ footer a { color: #00bfff; text-decoration: none; margin: 0 10px; }
 
 <section class="projects" id="projects">
 
-<!-- Project Cards -->
 <div class="project-card">
     <img src="Cloud architecture.png" alt="Cloud Architecture Project">
     <h2>Cloud Architecture Project</h2>
@@ -189,74 +241,7 @@ footer a { color: #00bfff; text-decoration: none; margin: 0 10px; }
     <div class="overlay"><a href="#" data-modal="modal2">View Details</a></div>
 </div>
 
-<div class="project-card">
-    <img src="simple-enterprise-integration.png" alt="Enterprise Integration Project">
-    <h2>Enterprise Integration</h2>
-    <p>Automated workflows improving enterprise system processes.</p>
-    <p class="result">Result: 40% faster processing, zero errors</p>
-    <div class="tech-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-    </div>
-    <div class="overlay"><a href="#" data-modal="modal3">View Details</a></div>
-</div>
-
-<div class="project-card">
-    <img src="cloud-services-isometric-composition-with-big-cloud-computing-infrastructure-elements-connected-with-dashed-lines-vector-illustration_1284-30495.avif" alt="Cloud Services Visualization">
-    <h2>Cloud Services Visualization</h2>
-    <p>Interactive cloud services visualization for stakeholders.</p>
-    <p class="result">Result: Improved onboarding, faster understanding</p>
-    <div class="tech-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-    </div>
-    <div class="overlay"><a href="#" data-modal="modal4">View Details</a></div>
-</div>
-
 </section>
-
-<!-- Modals -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="Cloud architecture.png" alt="Cloud Architecture">
-    <h2>Cloud Architecture Project</h2>
-    <p>Designed a scalable cloud architecture using AWS and Azure. Automated deployment with CI/CD pipelines and reduced costs by 30%.</p>
-    <p><strong>Tech Stack:</strong> Azure, AWS, GitHub, Docker, Python</p>
-  </div>
-</div>
-
-<div id="modal2" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="Frontend-vs.-Backend-ENG.png" alt="Fullstack">
-    <h2>Fullstack Demo Application</h2>
-    <p>Frontend with HTML/CSS and backend using Python Flask. Dockerized for deployment. 100% test coverage.</p>
-    <p><strong>Tech Stack:</strong> HTML5, CSS3, Python, Docker</p>
-  </div>
-</div>
-
-<div id="modal3" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="simple-enterprise-integration.png" alt="Enterprise Integration">
-    <h2>Enterprise Integration</h2>
-    <p>Automated workflows for enterprise system integration. Improved processing speed by 40% and eliminated errors.</p>
-    <p><strong>Tech Stack:</strong> Python, Docker, GitHub</p>
-  </div>
-</div>
-
-<div id="modal4" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="cloud-services-isometric-composition-with-big-cloud-computing-infrastructure-elements-connected-with-dashed-lines-vector-illustration_1284-30495.avif" alt="Cloud Services">
-    <h2>Cloud Services Visualization</h2>
-    <p>Interactive visualization to help stakeholders understand cloud infrastructure and dependencies. Faster onboarding.</p>
-    <p><strong>Tech Stack:</strong> AWS, Azure, GitHub</p>
-  </div>
-</div>
 
 <footer>
 <p>📧 <a href="mailto:Da.lia42@hotmail.se">Da.lia42@hotmail.se</a> · 📍 Stockholm</p>
@@ -267,14 +252,16 @@ footer a { color: #00bfff; text-decoration: none; margin: 0 10px; }
 </footer>
 
 <script>
-// Scroll animation
+// Scroll animation for project cards
 const cards = document.querySelectorAll('.project-card');
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
 }, { threshold: 0.2 });
 cards.forEach(card => observer.observe(card));
 
-// Modal functionality with zoom animation
+// Modal functionality
 const modalLinks = document.querySelectorAll('.overlay a');
 const modals = document.querySelectorAll('.modal');
 const closeBtns = document.querySelectorAll('.close');
@@ -285,7 +272,7 @@ modalLinks.forEach(link => {
         const modalId = link.getAttribute('data-modal');
         const modal = document.getElementById(modalId);
         modal.style.display = 'flex';
-        setTimeout(() => { modal.classList.add('show'); }, 10); // Trigger animation
+        setTimeout(() => { modal.classList.add('show'); }, 10);
     });
 });
 
@@ -299,7 +286,7 @@ closeBtns.forEach(btn => {
 
 window.addEventListener('click', e => {
     modals.forEach(modal => {
-        if (e.target == modal) {
+        if(e.target == modal) {
             modal.classList.remove('show');
             setTimeout(() => { modal.style.display='none'; }, 400);
         }
