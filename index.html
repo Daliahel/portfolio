@@ -7,11 +7,12 @@
 <style>
 /* ---------- Body ---------- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    color: #333;
 }
 
 /* ---------- Header ---------- */
@@ -19,43 +20,43 @@ header {
     background: linear-gradient(135deg, #0078d4, #00bfff);
     color: white;
     text-align: center;
-    padding: 70px 20px;
+    padding: 80px 20px;
     overflow: hidden;
 }
 header h1 {
     margin: 10px 0;
     font-size: 3em;
+    animation: slideFade 1s forwards;
     opacity: 0;
-    transform: translateY(-20px);
-    animation: titleFade 1s forwards;
+    transform: translateY(-30px);
 }
 header p {
-    margin: 0 0 20px 0;
-    font-size: 1.3em;
+    margin-top: 10px;
+    font-size: 1.4em;
+    animation: slideFade 1s 0.3s forwards;
     opacity: 0;
-    transform: translateY(-20px);
-    animation: titleFade 1s 0.3s forwards;
+    transform: translateY(-30px);
 }
-@keyframes titleFade { to { opacity: 1; transform: translateY(0); } }
+@keyframes slideFade { to { opacity: 1; transform: translateY(0); } }
 
 /* ---------- Hero Buttons ---------- */
-.hero-buttons { margin-top: 25px; }
+.hero-buttons { margin-top: 30px; }
 .hero-buttons .btn {
     background: linear-gradient(135deg, #ffffff, #e0f0ff);
     color: #0078d4;
-    padding: 12px 25px;
-    border-radius: 30px;
+    padding: 14px 28px;
+    border-radius: 35px;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 12px;
     font-weight: bold;
-    transition: 0.4s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: all 0.4s;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
 }
 .hero-buttons .btn:hover {
     background: linear-gradient(135deg, #0078d4, #00bfff);
     color: white;
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.35);
 }
 
 /* ---------- Skills ---------- */
@@ -63,47 +64,44 @@ header p {
     display: flex;
     justify-content: center;
     margin-top: 35px;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 .skills img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.4s ease, filter 0.4s ease;
+    width: 55px;
+    height: 55px;
+    transition: transform 0.5s ease, filter 0.5s ease;
     opacity: 0;
     transform: scale(0);
-    animation: iconPop 0.5s forwards;
+    animation: popIcon 0.6s forwards;
 }
-.skills img:hover {
-    transform: scale(1.3);
-    filter: brightness(1.2);
-}
-.skills img:nth-child(1) { animation-delay: 0.8s; }
-.skills img:nth-child(2) { animation-delay: 1s; }
+.skills img:hover { transform: scale(1.5); filter: brightness(1.3); }
+.skills img:nth-child(1) { animation-delay: 0.6s; }
+.skills img:nth-child(2) { animation-delay: 0.9s; }
 .skills img:nth-child(3) { animation-delay: 1.2s; }
-.skills img:nth-child(4) { animation-delay: 1.4s; }
-.skills img:nth-child(5) { animation-delay: 1.6s; }
-@keyframes iconPop { to { opacity: 1; transform: scale(1); } }
+.skills img:nth-child(4) { animation-delay: 1.5s; }
+.skills img:nth-child(5) { animation-delay: 1.8s; }
+@keyframes popIcon { to { opacity: 1; transform: scale(1); } }
 
 /* ---------- Projects ---------- */
 .projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 60px 20px;
+    margin: 70px 20px;
     gap: 30px;
 }
 .project-card {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    background: linear-gradient(145deg, #ffffff, #e0f0ff);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     width: 320px;
     overflow: hidden;
     text-align: center;
     padding-bottom: 25px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(60px);
     position: relative;
 }
 .project-card.visible {
@@ -111,16 +109,19 @@ header p {
     transform: translateY(0);
 }
 .project-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.25);
 }
 .project-card img { 
     width: 100%; 
     height: 200px; 
     object-fit: cover; 
     border-bottom: 3px solid #0078d4;
+    border-radius: 20px 20px 0 0;
+    transition: transform 0.5s ease;
 }
-.project-card h2 { margin: 18px 0 12px 0; font-size: 1.3em; }
+.project-card img:hover { transform: scale(1.05); }
+.project-card h2 { margin: 18px 0 12px 0; font-size: 1.4em; }
 .project-card p { margin: 0 20px 10px 20px; font-size: 0.95em; color: #333; }
 .project-card .result { font-weight: bold; color: #0078d4; margin-bottom: 12px; }
 
@@ -129,16 +130,18 @@ header p {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
     margin-bottom: 12px;
 }
 .project-labels span {
     color: white;
     font-size: 0.75em;
-    padding: 3px 8px;
-    border-radius: 12px;
+    padding: 4px 10px;
+    border-radius: 15px;
     font-weight: bold;
+    transition: transform 0.3s;
 }
+.project-labels span:hover { transform: scale(1.1); }
 .project-labels span.backend { background-color: #00bfff; }
 .project-labels span.frontend { background-color: #ff7f50; }
 .project-labels span.cloud { background-color: #32cd32; }
@@ -146,14 +149,14 @@ header p {
 
 /* ---------- Tech Icons ---------- */
 .tech-icons img {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     margin: 0 6px;
     transition: transform 0.3s, filter 0.3s;
 }
-.tech-icons img:hover { transform: scale(1.3); filter: brightness(1.2); }
+.tech-icons img:hover { transform: scale(1.4); filter: brightness(1.3); }
 
-/* ---------- Overlay / View Details Button ---------- */
+/* ---------- Overlay / View Details ---------- */
 .project-card .overlay {
     position: absolute;
     top: 0; left: 0;
@@ -164,101 +167,29 @@ header p {
 }
 .overlay a {
     background: linear-gradient(135deg, #0078d4, #00bfff);
-    padding: 10px 22px;
-    border-radius: 30px;
+    padding: 12px 26px;
+    border-radius: 35px;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: 0.4s;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 .overlay a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    transform: scale(1.12) rotate(-2deg);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.35);
 }
 
 /* ---------- Footer ---------- */
-footer { background-color: #222; color: white; text-align: center; padding: 35px 20px; margin-top: 50px; }
-footer a { color: #00bfff; text-decoration: none; margin: 0 10px; }
-
-/* ---------- Modal ---------- */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.7);
-    justify-content: center;
-    align-items: center;
+footer { 
+    background: linear-gradient(135deg, #222, #444);
+    color: white; 
+    text-align: center; 
+    padding: 40px 20px; 
+    margin-top: 60px; 
 }
-.modal-content {
-    background: linear-gradient(145deg, #ffffff, #e0f0ff);
-    padding: 25px;
-    border-radius: 15px;
-    max-width: 650px;
-    width: 90%;
-    text-align: left;
-    position: relative;
-    transform: scale(0.7);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-}
-.modal.show .modal-content {
-    transform: scale(1);
-    opacity: 1;
-    animation: modalGradient 3s infinite alternate;
-}
-.modal-content img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    transform: scale(0.8);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-.modal.show .modal-content img {
-    transform: scale(1);
-    opacity: 1;
-}
-@keyframes modalGradient {
-    0% { background: linear-gradient(145deg, #ffffff, #e0f0ff); }
-    50% { background: linear-gradient(145deg, #e0f0ff, #ffffff); }
-    100% { background: linear-gradient(145deg, #ffffff, #e0f0ff); }
-}
-
-/* ---------- Modal Text Fade & Slide ---------- */
-.modal-content h2,
-.modal-content p {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-.modal.show .modal-content h2 {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.1s;
-}
-.modal.show .modal-content img {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.3s;
-}
-.modal.show .modal-content p {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.5s;
-}
-
-.close {
-    position: absolute;
-    top: 10px; right: 15px;
-    font-size: 26px; font-weight: bold;
-    cursor: pointer; color: #333;
-    transition: color 0.3s;
-}
-.close:hover { color: #0078d4; }
+footer a { color: #00bfff; text-decoration: none; margin: 0 12px; }
+footer a:hover { color: #ff7f50; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 700px) {
@@ -303,7 +234,7 @@ footer a { color: #00bfff; text-decoration: none; margin: 0 10px; }
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
     </div>
-    <div class="overlay"><a href="#" data-modal="modal1">View Details</a></div>
+    <div class="overlay"><a href="#">View Details</a></div>
 </div>
 
 <!-- Project 2 -->
@@ -323,42 +254,7 @@ footer a { color: #00bfff; text-decoration: none; margin: 0 10px; }
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
     </div>
-    <div class="overlay"><a href="#" data-modal="modal2">View Details</a></div>
-</div>
-
-<!-- Project 3 -->
-<div class="project-card">
-    <div class="project-labels">
-        <span class="backend">Backend</span>
-        <span class="devops">DevOps</span>
-    </div>
-    <img src="simple-enterprise-integration.png" alt="Enterprise Integration Project">
-    <h2>Enterprise Integration</h2>
-    <p>Automated workflows improving enterprise system processes.</p>
-    <p class="result">Result: 40% faster processing, zero errors</p>
-    <div class="tech-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-    </div>
-    <div class="overlay"><a href="#" data-modal="modal3">View Details</a></div>
-</div>
-
-<!-- Project 4 -->
-<div class="project-card">
-    <div class="project-labels">
-        <span class="cloud">Cloud</span>
-    </div>
-    <img src="cloud-services-isometric-composition-with-big-cloud-computing-infrastructure-elements-connected-with-dashed-lines-vector-illustration_1284-30495.avif" alt="Cloud Services Visualization">
-    <h2>Cloud Services Visualization</h2>
-    <p>Interactive cloud services visualization for stakeholders.</p>
-    <p class="result">Result: Improved onboarding, faster understanding</p>
-    <div class="tech-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-    </div>
-    <div class="overlay"><a href="#" data-modal="modal4">View Details</a></div>
+    <div class="overlay"><a href="#">View Details</a></div>
 </div>
 
 </section>
@@ -371,43 +267,6 @@ footer a { color: #00bfff; text-decoration: none; margin: 0 10px; }
 </p>
 </footer>
 
-<!-- ---------- Modals ---------- -->
-<div class="modal" id="modal1">
-<div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Cloud Architecture Project</h2>
-    <img src="Cloud architecture.png" alt="Cloud Architecture">
-    <p>Full project details: Deployed AWS & Azure architecture with Terraform and CI/CD pipelines, optimized for cost and performance.</p>
-</div>
-</div>
-
-<div class="modal" id="modal2">
-<div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Fullstack Demo Application</h2>
-    <img src="Frontend-vs.-Backend-ENG.png" alt="Fullstack Demo">
-    <p>Full project details: Frontend in HTML/CSS, backend in Python Flask, containerized with Docker for smooth deployment.</p>
-</div>
-</div>
-
-<div class="modal" id="modal3">
-<div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Enterprise Integration</h2>
-    <img src="simple-enterprise-integration.png" alt="Enterprise Integration">
-    <p>Full project details: Automated workflows, reducing errors and speeding up enterprise processes.</p>
-</div>
-</div>
-
-<div class="modal" id="modal4">
-<div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Cloud Services Visualization</h2>
-    <img src="cloud-services-isometric-composition-with-big-cloud-computing-infrastructure-elements-connected-with-dashed-lines-vector-illustration_1284-30495.avif" alt="Cloud Services Visualization">
-    <p>Full project details: Interactive visualization to improve stakeholder understanding of cloud services.</p>
-</div>
-</div>
-
 <script>
 // Scroll animation for project cards
 const cards = document.querySelectorAll('.project-card');
@@ -415,36 +274,6 @@ const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.2 });
 cards.forEach(card => observer.observe(card));
-
-// Modal functionality
-const modalLinks = document.querySelectorAll('.overlay a');
-const modals = document.querySelectorAll('.modal');
-const closeBtns = document.querySelectorAll('.close');
-
-modalLinks.forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-        const modal = document.getElementById(link.dataset.modal);
-        modal.classList.add('show');
-        modal.style.display = 'flex';
-    });
-});
-
-closeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        btn.parentElement.parentElement.classList.remove('show');
-        btn.parentElement.parentElement.style.display = 'none';
-    });
-});
-
-window.addEventListener('click', e => {
-    modals.forEach(modal => {
-        if(e.target === modal) {
-            modal.classList.remove('show');
-            modal.style.display = 'none';
-        }
-    });
-});
 </script>
 
 </body>
