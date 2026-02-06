@@ -1,64 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dalia Heli | Portfolio</title>
+
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f6f8;
     color: #333;
 }
-header {
-    background: #0078d4;
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-}
-header h1 { margin: 0; font-size: 2.8em; }
-header p { margin-top: 10px; font-size: 1.2em; }
 
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 50px 20px;
-    max-width: 1100px;
-    margin: auto;
+/* ===== HEADER ===== */
+header {
+    background-color: #0078d4;
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
 }
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+}
+header p {
+    margin-top: 12px;
+    font-size: 1.2em;
+    opacity: 0.95;
+}
+
+/* ===== PROJECTS ===== */
+.projects {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
 .project {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     overflow: hidden;
+    transition: transform 0.25s ease;
 }
+.project:hover {
+    transform: translateY(-5px);
+}
+
 .project img {
     width: 100%;
     height: 180px;
     object-fit: cover;
 }
+
+/* ===== CONTENT ===== */
+.project-content {
+    padding: 18px;
+}
 .project h2 {
-    margin: 15px;
-    font-size: 1.3em;
+    margin: 0 0 10px 0;
+    font-size: 1.25em;
 }
 .project p {
-    margin: 0 15px 20px 15px;
+    margin: 0 0 14px 0;
     font-size: 0.95em;
+    line-height: 1.5;
 }
+
+/* ===== TAGS ===== */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.tag {
+    background-color: #e6eef6;
+    color: #0078d4;
+    padding: 4px 10px;
+    font-size: 0.75em;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* ===== FOOTER ===== */
 footer {
-    background: #222;
+    background-color: #222;
     color: white;
     text-align: center;
-    padding: 30px 20px;
+    padding: 35px 20px;
 }
 footer a {
     color: #00bfff;
     text-decoration: none;
 }
+footer a:hover {
+    text-decoration: underline;
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -68,34 +112,86 @@ footer a {
 
 <section class="projects">
 
+    <!-- Project 1 -->
     <div class="project">
         <img src="Cloud architecture.png" alt="Cloud Architecture">
-        <h2>Cloud Architecture</h2>
-        <p>Designed cloud solutions on AWS and Azure with focus on scalability and cost efficiency.</p>
+        <div class="project-content">
+            <h2>Cloud Architecture</h2>
+            <p>
+                Design och implementation av skalbar molnarkitektur i AWS och Azure
+                med fokus på säkerhet, automation och kostnadseffektivitet.
+            </p>
+            <div class="tags">
+                <span class="tag">Cloud</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Azure</span>
+                <span class="tag">DevOps</span>
+            </div>
+        </div>
     </div>
 
+    <!-- Project 2 -->
     <div class="project">
         <img src="Frontend-vs.-Backend-ENG.png" alt="Fullstack Project">
-        <h2>Fullstack Demo</h2>
-        <p>Frontend in HTML/CSS with backend in Python Flask. Dockerized deployment.</p>
+        <div class="project-content">
+            <h2>Fullstack Demo</h2>
+            <p>
+                Fullstack-applikation med frontend i HTML/CSS och backend i Python Flask.
+                Dockeriserad för enkel deployment.
+            </p>
+            <div class="tags">
+                <span class="tag">Frontend</span>
+                <span class="tag">Backend</span>
+                <span class="tag">Python</span>
+                <span class="tag">Docker</span>
+            </div>
+        </div>
     </div>
 
+    <!-- Project 3 -->
     <div class="project">
         <img src="simple-enterprise-integration.png" alt="Enterprise Integration">
-        <h2>Enterprise Integration</h2>
-        <p>Integrated enterprise systems and automated workflows.</p>
+        <div class="project-content">
+            <h2>Enterprise Integration</h2>
+            <p>
+                Integration av system och automatiserade arbetsflöden
+                för företagsmiljöer med fokus på stabilitet och skalbarhet.
+            </p>
+            <div class="tags">
+                <span class="tag">Integration</span>
+                <span class="tag">Backend</span>
+                <span class="tag">Automation</span>
+            </div>
+        </div>
     </div>
 
+    <!-- Project 4 -->
     <div class="project">
         <img src="stock-photo-html-and-css-code-developing-screenshot-abstract-web-site-source-listing-on-black-background-with-279336206.jpg" alt="HTML CSS Demo">
-        <h2>HTML & CSS Demo</h2>
-        <p>Responsive frontend layout built with pure HTML and CSS.</p>
+        <div class="project-content">
+            <h2>HTML & CSS Demo</h2>
+            <p>
+                Responsiv frontend byggd med ren HTML och CSS
+                med fokus på struktur, layout och användbarhet.
+            </p>
+            <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Frontend</span>
+            </div>
+        </div>
     </div>
 
 </section>
 
 <footer>
-    <p>📧 <a href="mailto:Da.lia42@hotmail.se">Da.lia42@hotmail.se</a> · Stockholm</p>
+    <p>
+        📧 <a href="mailto:Da.lia42@hotmail.se">Da.lia42@hotmail.se</a> · Stockholm
+    </p>
+    <p>
+        <a href="https://github.com/Daliahel" target="_blank">GitHub</a> |
+        <a href="https://linkedin.com/in/daliahel" target="_blank">LinkedIn</a>
+    </p>
 </footer>
 
 </body>
