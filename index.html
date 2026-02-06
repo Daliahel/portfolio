@@ -43,18 +43,18 @@ header p {
 /* ---------- Hero Buttons ---------- */
 .hero-buttons { margin-top: 25px; }
 .hero-buttons .btn {
-    background-color: white;
+    background: linear-gradient(135deg, #ffffff, #e0f0ff);
     color: #0078d4;
     padding: 12px 25px;
     border-radius: 30px;
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.4s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 .hero-buttons .btn:hover {
-    background-color: #005a9e;
+    background: linear-gradient(135deg, #0078d4, #00bfff);
     color: white;
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0,0,0,0.3);
@@ -190,6 +190,7 @@ footer a { color: #00bfff; text-decoration: none; margin: 0 10px; }
 .modal.show .modal-content {
     transform: scale(1);
     opacity: 1;
+    animation: modalGradient 3s infinite alternate;
 }
 
 /* ---------- Modal Image Pop-in ---------- */
@@ -204,6 +205,13 @@ footer a { color: #00bfff; text-decoration: none; margin: 0 10px; }
 .modal.show .modal-content img {
     transform: scale(1);
     opacity: 1;
+}
+
+/* ---------- Modal Gradient Animation ---------- */
+@keyframes modalGradient {
+    0% { background: linear-gradient(145deg, #ffffff, #e0f0ff); }
+    50% { background: linear-gradient(145deg, #e0f0ff, #ffffff); }
+    100% { background: linear-gradient(145deg, #ffffff, #e0f0ff); }
 }
 
 .close {
