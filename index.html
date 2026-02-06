@@ -14,6 +14,7 @@ body {
     color: #333;
 }
 
+/* HEADER */
 header {
     background: linear-gradient(135deg, #0078d4, #00bfff);
     color: white;
@@ -80,7 +81,6 @@ header p { margin-top: 10px; font-size: 1.4em; animation: slideFade 1s 0.3s forw
 .project-card img:hover { transform: scale(1.05); }
 .project-card h2 { margin: 18px 0 12px 0; font-size: 1.4em; }
 .project-card p { margin: 0 20px 10px 20px; font-size: 0.95em; color: #333; }
-.project-card .result { font-weight: bold; color: #0078d4; margin-bottom: 12px; }
 .project-labels { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
 .project-labels span { color: white; font-size: 0.75em; padding: 4px 10px; border-radius: 15px; font-weight: bold; transition: transform 0.3s; }
 .project-labels span:hover { transform: scale(1.1); }
@@ -95,6 +95,12 @@ header p { margin-top: 10px; font-size: 1.4em; animation: slideFade 1s 0.3s forw
 .project-card:hover .overlay { opacity: 1; }
 .overlay a { background: linear-gradient(135deg, #0078d4, #00bfff); padding: 12px 26px; border-radius: 35px; text-decoration: none; color: white; font-weight: bold; transition: 0.4s; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
 .overlay a:hover { transform: scale(1.15) rotate(-2deg); box-shadow: 0 12px 20px rgba(0,0,0,0.35); }
+
+/* Modal */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); justify-content: center; align-items: center; }
+.modal-content { background: linear-gradient(145deg, #ffffff, #e0f0ff); padding: 25px; border-radius: 15px; max-width: 650px; width: 90%; text-align: left; position: relative; }
+.close { position: absolute; top: 10px; right: 15px; font-size: 26px; font-weight: bold; cursor: pointer; color: #333; transition: color 0.3s; }
+.close:hover { color: #0078d4; }
 
 /* Footer */
 footer { background: linear-gradient(135deg, #222, #444); color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
@@ -146,67 +152,45 @@ footer a:hover { color: #ff7f50; }
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
     </div>
-    <div class="overlay"><a href="https://github.com/Daliahel" target="_blank">View Details</a></div>
+    <div class="overlay"><a href="#" data-modal="modal1">View Details</a></div>
 </div>
 
-<!-- Project 2 -->
-<div class="project-card">
-    <div class="project-labels"><span class="frontend">Frontend</span><span class="backend">Backend</span><span class="devops">DevOps</span></div>
-    <img src="Frontend-vs.-Backend-ENG.png" alt="Fullstack Demo">
-    <h2>Fullstack Demo</h2>
-    <p>Frontend HTML/CSS & Backend Python Flask. Dockeriserad för enkel deployment.</p>
-    <div class="tech-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-    </div>
-    <div class="overlay"><a href="https://github.com/Daliahel" target="_blank">View Details</a></div>
-</div>
-
-<!-- Project 3 -->
-<div class="project-card">
-    <div class="project-labels"><span class="cloud">Cloud</span><span class="devops">DevOps</span></div>
-    <img src="simple-enterprise-integration.png" alt="Enterprise Integration">
-    <h2>Enterprise Integration</h2>
-    <p>Integrering av flera tjänster och automatiserade arbetsflöden för företagsmiljöer.</p>
-    <div class="tech-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-    </div>
-    <div class="overlay"><a href="https://github.com/Daliahel" target="_blank">View Details</a></div>
-</div>
-
-<!-- Project 4 -->
-<div class="project-card">
-    <div class="project-labels"><span class="frontend">Frontend</span><span class="backend">Backend</span></div>
-    <img src="stock-photo-html-and-css-code-developing-screenshot-abstract-web-site-source-listing-on-black-background-with-279336206.jpg" alt="HTML/CSS Demo">
-    <h2>HTML/CSS Demo</h2>
-    <p>Responsiv design, användarvänlig frontend med modern struktur.</p>
-    <div class="tech-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-    </div>
-    <div class="overlay"><a href="https://github.com/Daliahel" target="_blank">View Details</a></div>
-</div>
+<!-- Repeat for Project 2,3,4 similarly with data-modal="modal2" etc -->
 
 </section>
 
-<footer>
-<p>📧 <a href="mailto:Da.lia42@hotmail.se">Da.lia42@hotmail.se</a> · 📍 Stockholm</p>
-<p>
-    <a href="https://github.com/Daliahel" target="_blank">GitHub</a> |
-    <a href="https://linkedin.com/in/daliahel" target="_blank">LinkedIn</a>
-</p>
-</footer>
+<!-- Modal exempel -->
+<div id="modal1" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<h2>Cloud Architecture</h2>
+<img src="Cloud architecture.png" alt="Cloud Architecture">
+<p>Detaljerad beskrivning av projektet, teknik som användes: AWS, Azure, Terraform, CI/CD pipelines, Docker, GitHub Actions, fokus på automatisering och kostnadseffektivitet.</p>
+</div>
+</div>
 
 <script>
+// Scroll animation
 const cards = document.querySelectorAll('.project-card');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.2 });
 cards.forEach(card => observer.observe(card));
+
+// Modal functionality
+const modalLinks = document.querySelectorAll('.overlay a');
+modalLinks.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const modalId = link.getAttribute('data-modal');
+        document.getElementById(modalId).style.display = 'flex';
+    });
+});
+const closeButtons = document.querySelectorAll('.close');
+closeButtons.forEach(btn => {
+    btn.addEventListener('click', () => { btn.parentElement.parentElement.style.display = 'none'; });
+});
+window.addEventListener('click', e => { if(e.target.classList.contains('modal')) e.target.style.display = 'none'; });
 </script>
 
 </body>
