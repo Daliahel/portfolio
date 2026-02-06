@@ -20,7 +20,7 @@
         }
 
         header h1 {
-            margin: 0 0 10px 0;
+            margin: 10px 0 10px 0;
             font-size: 2.8em;
         }
 
@@ -101,6 +101,12 @@
             color: #333;
         }
 
+        .project-card .result {
+            font-weight: bold;
+            color: #0078d4;
+            margin-bottom: 10px;
+        }
+
         .tech-icons img {
             width: 30px;
             height: 30px;
@@ -119,6 +125,14 @@
             color: #00bfff;
             text-decoration: none;
             margin: 0 10px;
+        }
+
+        /* Responsiv */
+        @media (max-width: 700px) {
+            .projects {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -150,6 +164,7 @@
             Focused on availability, performance, security, and cost efficiency using
             infrastructure automation and CI/CD pipelines.
         </p>
+        <p class="result">Result: 99.9% uptime, 30% cost reduction</p>
         <div class="tech-icons">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
@@ -165,6 +180,7 @@
             Built a fullstack web application with a frontend in HTML/CSS and backend using Python Flask.
             Containerized the application with Docker for easy deployment.
         </p>
+        <p class="result">Result: Fast deployment, 100% test coverage</p>
         <div class="tech-icons">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
