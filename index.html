@@ -188,4 +188,37 @@ footer a {
     <img src="cloud-services-isometric-composition-with-big-cloud-computing-infrastructure-elements-connected-with-dashed-lines-vector-illustration_1284-30495.avif" alt="Cloud Services Visualization">
     <h2>Cloud Services Visualization</h2>
     <p>Created interactive cloud services visualization to help stakeholders understand infrastructure architecture and dependencies.</p>
-    <p class="result">Result: Improved stakeholder understanding, faster onboa
+    <p class="result">Result: Improved stakeholder understanding, faster onboarding</p>
+    <div class="tech-icons">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+    </div>
+</div>
+
+</section>
+
+<footer>
+<p>📧 <a href="mailto:Da.lia42@hotmail.se">Da.lia42@hotmail.se</a> · 📍 Stockholm</p>
+<p>
+    <a href="https://github.com/Daliahel" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com/in/daliahel" target="_blank">LinkedIn</a>
+</p>
+</footer>
+
+<script>
+// Scroll animation
+const cards = document.querySelectorAll('.project-card');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
