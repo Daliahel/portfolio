@@ -30,7 +30,7 @@
 
         /* Header / Hero */
         header {
-            background-color: #0078d4;
+            background: linear-gradient(135deg, #0078d4, #00bfff);
             color: white;
             text-align: center;
             padding: 80px 20px 60px 20px;
@@ -64,6 +64,8 @@
         .hero-buttons .btn:hover {
             background-color: #005a9e;
             color: white;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
 
         /* Skills in header */
@@ -93,7 +95,7 @@
             line-height: 1.6;
         }
 
-        /* Skills section */
+        /* Skills Section */
         #skills {
             text-align: center;
         }
@@ -128,6 +130,14 @@
             text-align: center;
             padding-bottom: 20px;
             transition: 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
         .project-card:hover {
@@ -158,6 +168,11 @@
         }
 
         /* Contact form */
+        #contact {
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+
         #contact form {
             max-width: 500px;
             margin: 20px auto 0 auto;
@@ -186,6 +201,7 @@
 
         #contact button:hover {
             background-color: #005a9e;
+            transform: scale(1.03);
         }
 
         /* Footer */
@@ -291,7 +307,7 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" style="background-color:#f0f8ff; text-align:center;">
+<section id="contact">
     <h2>Contact Me</h2>
     <form action="mailto:Da.lia42@hotmail.se" method="post" enctype="text/plain">
         <input type="text" name="name" placeholder="Your Name" required>
@@ -309,6 +325,22 @@
         <a href="https://linkedin.com/in/daliahel" target="_blank">LinkedIn</a>
     </p>
 </footer>
+
+<!-- Scroll animation script -->
+<script>
+const faders = document.querySelectorAll('.project-card');
+const appearOptions = { threshold: 0.1 };
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader => { appearOnScroll.observe(fader); });
+</script>
 
 </body>
 </html>
