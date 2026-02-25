@@ -14,10 +14,30 @@ body {
     color: #333;
     scroll-behavior: smooth;
 }
-a { text-decoration: none; }
+a { text-decoration: none; color: inherit; }
 h1,h2,h3 { margin: 0; }
 h2 { font-size: 2em; margin-bottom: 20px; }
 section { padding: 60px 20px; }
+
+/* --- Navbar --- */
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #0078d4;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav a:hover { color: #ffeb3b; }
 
 /* --- Header / Hero --- */
 header {
@@ -25,7 +45,7 @@ header {
     overflow: hidden;
     color: white;
     text-align: center;
-    padding: 100px 20px 60px;
+    padding: 120px 20px 60px;
     background: #0078d4;
 }
 .header-bg {
@@ -41,9 +61,7 @@ header h1 { font-size: 3em; margin-bottom: 10px; }
 header p { font-size: 1.2em; margin-bottom: 20px; }
 
 /* --- Buttons --- */
-.hero-buttons {
-    margin-top: 20px;
-}
+.hero-buttons { margin-top: 20px; }
 .hero-buttons .btn {
     background: white;
     color: #0078d4;
@@ -143,6 +161,14 @@ footer a { color:#00bfff; margin:0 10px; }
 </head>
 <body>
 
+<!-- Sticky Navbar -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills-section">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
 <header>
   <div class="header-bg"></div>
   <h1>Dalia Heli</h1>
@@ -234,7 +260,7 @@ footer a { color:#00bfff; margin:0 10px; }
 </footer>
 
 <script>
-// Fade-in scroll animations
+// Fade-in animations
 const faders = document.querySelectorAll('.project-card, #about, #skills-section, #contact, .hero-buttons .btn, .skills');
 const appearOptions = { threshold: 0.1 };
 const appearOnScroll = new IntersectionObserver(function(entries, observer){
@@ -246,7 +272,7 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer){
 }, appearOptions);
 faders.forEach(fader => appearOnScroll.observe(fader));
 
-// Parallax header background
+// Parallax header
 const headerBg = document.querySelector('.header-bg');
 window.addEventListener('scroll', () => {
     const offset = window.scrollY;
