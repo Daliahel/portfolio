@@ -15,37 +15,38 @@ body {
 }
 
 a { text-decoration: none; }
+
 h2 { font-size: 2em; margin-bottom: 20px; }
+
 section { padding: 60px 20px; }
 
-/* Header / Hero with parallax */
+/* Header / Hero */
 header {
-    background: linear-gradient(135deg, #0078d4, #00bfff);
-    color: white;
-    text-align: center;
-    padding: 80px 20px 60px 20px;
     position: relative;
     overflow: hidden;
+    color: white;
+    text-align: center;
+    padding: 80px 20px 60px;
 }
 
-header::before {
-    content: "";
-    background: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+.header-bg {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     opacity: 0.2;
     z-index: 0;
     transform: translateY(0);
-    transition: transform 0.2s;
 }
 
 header h1, header p, .hero-buttons, .skills {
-    position: relative; z-index: 1;
+    position: relative; 
+    z-index: 1;
 }
 
 header h1 { font-size: 3em; margin: 0 0 10px 0; }
 header p { font-size: 1.2em; margin: 0 0 20px 0; }
 
+/* Buttons */
 .hero-buttons {
     margin-top: 20px;
 }
@@ -70,6 +71,7 @@ header p { font-size: 1.2em; margin: 0 0 20px 0; }
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
+/* Skills in header */
 .skills {
     display: flex;
     justify-content: center;
@@ -79,7 +81,6 @@ header p { font-size: 1.2em; margin: 0 0 20px 0; }
     opacity: 0;
     transform: translateY(20px);
 }
-
 .skills img { width: 50px; height: 50px; }
 
 /* About Me */
@@ -145,98 +146,99 @@ footer a { color:#00bfff; margin:0 10px; }
 <body>
 
 <header>
-    <h1>Dalia Heli</h1>
-    <p>Cloud Architect / DevOps Engineer · Stockholm</p>
-    <div class="hero-buttons">
-        <a href="#projects" class="btn">See Projects</a>
-        <a href="CV_Dalia_Heli.pdf" target="_blank" class="btn">Download CV</a>
-    </div>
-    <div class="skills">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-    </div>
+  <div class="header-bg"></div>
+  <h1>Dalia Heli</h1>
+  <p>Cloud Architect / DevOps Engineer · Stockholm</p>
+  <div class="hero-buttons">
+      <a href="#projects" class="btn">See Projects</a>
+      <a href="CV_Dalia_Heli.pdf" target="_blank" class="btn">Download CV</a>
+  </div>
+  <div class="skills">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+  </div>
 </header>
 
 <section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am a Cloud Architect and DevOps Engineer with experience in AWS, Azure, and CI/CD automation.
-        I enjoy designing scalable cloud architectures, optimizing performance, and implementing secure and cost-efficient solutions.
-        My goal is to build reliable, maintainable, and modern cloud infrastructures that accelerate business success.
-    </p>
+  <h2>About Me</h2>
+  <p>
+      I am a Cloud Architect and DevOps Engineer with experience in AWS, Azure, and CI/CD automation.
+      I enjoy designing scalable cloud architectures, optimizing performance, and implementing secure and cost-efficient solutions.
+      My goal is to build reliable, maintainable, and modern cloud infrastructures that accelerate business success.
+  </p>
 </section>
 
 <section id="skills-section">
-    <h2>Skills & Tools</h2>
-    <div class="skill-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
-    </div>
+  <h2>Skills & Tools</h2>
+  <div class="skill-icons">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+  </div>
 </section>
 
 <section class="projects" id="projects">
-    <div class="project-card">
-        <img src="Cloud architecture.png" alt="Cloud Architecture Project">
-        <h3>Cloud Architecture Project</h3>
-        <p>
-            Designed and deployed a scalable cloud architecture in AWS and Azure.
-            Focused on availability, performance, security, and cost efficiency using
-            infrastructure automation and CI/CD pipelines.
-        </p>
-        <div class="tech-icons">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-        </div>
-    </div>
-    <div class="project-card">
-        <img src="Frontend-vs.-Backend-ENG.png" alt="Fullstack Project">
-        <h3>Fullstack Demo Application</h3>
-        <p>
-            Built a fullstack web application with a frontend in HTML/CSS and backend using Python Flask.
-            Containerized the application with Docker for easy deployment.
-        </p>
-        <div class="tech-icons">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-        </div>
-    </div>
+  <div class="project-card">
+      <img src="Cloud architecture.png" alt="Cloud Architecture Project">
+      <h3>Cloud Architecture Project</h3>
+      <p>
+          Designed and deployed a scalable cloud architecture in AWS and Azure.
+          Focused on availability, performance, security, and cost efficiency using
+          infrastructure automation and CI/CD pipelines.
+      </p>
+      <div class="tech-icons">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+      </div>
+  </div>
+
+  <div class="project-card">
+      <img src="Frontend-vs.-Backend-ENG.png" alt="Fullstack Project">
+      <h3>Fullstack Demo Application</h3>
+      <p>
+          Built a fullstack web application with a frontend in HTML/CSS and backend using Python Flask.
+          Containerized the application with Docker for easy deployment.
+      </p>
+      <div class="tech-icons">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+      </div>
+  </div>
 </section>
 
 <section id="contact">
-    <h2>Contact Me</h2>
-    <form action="mailto:Da.lia42@hotmail.se" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
+  <h2>Contact Me</h2>
+  <form action="mailto:Da.lia42@hotmail.se" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+  </form>
 </section>
 
 <footer>
-    <p>📧 <a href="mailto:Da.lia42@hotmail.se">Da.lia42@hotmail.se</a> · 📍 Stockholm</p>
-    <p>
-        <a href="https://github.com/Daliahel" target="_blank">GitHub</a> |
-        <a href="https://linkedin.com/in/daliahel" target="_blank">LinkedIn</a>
-    </p>
+  <p>📧 <a href="mailto:Da.lia42@hotmail.se">Da.lia42@hotmail.se</a> · 📍 Stockholm</p>
+  <p>
+      <a href="https://github.com/Daliahel" target="_blank">GitHub</a> |
+      <a href="https://linkedin.com/in/daliahel" target="_blank">LinkedIn</a>
+  </p>
 </footer>
 
 <script>
-// Scroll animations & fade-in
+// Fade-in scroll animations
 const faders = document.querySelectorAll('.project-card, #about, #skills-section, #contact, .hero-buttons .btn, .skills');
 const appearOptions = { threshold: 0.1 };
-
 const appearOnScroll = new IntersectionObserver(function(entries, observer){
     entries.forEach(entry => {
         if(!entry.isIntersecting) return;
@@ -244,15 +246,13 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer){
         observer.unobserve(entry.target);
     });
 }, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
 
-faders.forEach(fader => { appearOnScroll.observe(fader); });
-
-// Header parallax
+// Parallax header background
+const headerBg = document.querySelector('.header-bg');
 window.addEventListener('scroll', () => {
     const offset = window.scrollY;
-    document.querySelector('header::before');
-    const headerBg = document.querySelector('header');
-    headerBg.style.backgroundPositionY = offset * 0.3 + 'px';
+    headerBg.style.transform = `translateY(${offset * 0.3}px)`;
 });
 </script>
 
