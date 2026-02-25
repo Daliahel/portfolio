@@ -5,28 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dalia Heli | Cloud & DevOps Portfolio</title>
     <style>
+        /* Base styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            color: #333;
+            scroll-behavior: smooth;
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        /* Header / Hero */
         header {
             background-color: #0078d4;
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px 60px 20px;
         }
 
         header h1 {
+            font-size: 3em;
             margin: 0 0 10px 0;
-            font-size: 2.8em;
         }
 
         header p {
-            margin: 0 0 20px 0;
             font-size: 1.2em;
+            margin: 0 0 20px 0;
         }
 
         .hero-buttons {
@@ -38,10 +55,10 @@
             color: #0078d4;
             padding: 12px 25px;
             border-radius: 5px;
-            text-decoration: none;
             margin: 0 10px;
             font-weight: bold;
             transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .hero-buttons .btn:hover {
@@ -49,11 +66,13 @@
             color: white;
         }
 
+        /* Skills in header */
         .skills {
             display: flex;
             justify-content: center;
             margin-top: 30px;
             gap: 15px;
+            flex-wrap: wrap;
         }
 
         .skills img {
@@ -61,19 +80,50 @@
             height: 50px;
         }
 
-        .projects {
+        /* About Me */
+        #about {
+            background-color: #e6f0fa;
+            text-align: center;
+        }
+
+        #about p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Skills section */
+        #skills {
+            text-align: center;
+        }
+
+        #skills .skill-icons {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            margin: 50px 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        #skills .skill-icons img {
+            width: 60px;
+            height: 60px;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
+            margin: 0 auto;
+            max-width: 1200px;
         }
 
         .project-card {
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 320px;
             overflow: hidden;
             text-align: center;
             padding-bottom: 20px;
@@ -91,7 +141,7 @@
             object-fit: cover;
         }
 
-        .project-card h2 {
+        .project-card h3 {
             margin: 15px 0 10px 0;
         }
 
@@ -107,29 +157,71 @@
             margin: 0 6px;
         }
 
+        /* Contact form */
+        #contact form {
+            max-width: 500px;
+            margin: 20px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #contact input, #contact textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        #contact button {
+            padding: 12px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #contact button:hover {
+            background-color: #005a9e;
+        }
+
+        /* Footer */
         footer {
             background-color: #222;
             color: white;
             text-align: center;
             padding: 30px 20px;
-            margin-top: 50px;
         }
 
         footer a {
             color: #00bfff;
-            text-decoration: none;
             margin: 0 10px;
+        }
+
+        /* Responsive tweaks */
+        @media(max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
 
+<!-- Header / Hero -->
 <header>
     <h1>Dalia Heli</h1>
     <p>Cloud Architect / DevOps Engineer · Stockholm</p>
     <div class="hero-buttons">
         <a href="#projects" class="btn">See Projects</a>
-        <a href="CV_Dalia_Heli.pdf.pdf" target="_blank" class="btn">Download CV</a>
+        <a href="CV_Dalia_Heli.pdf" target="_blank" class="btn">Download CV</a>
     </div>
     <div class="skills">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
@@ -140,11 +232,35 @@
     </div>
 </header>
 
-<section class="projects" id="projects">
+<!-- About Me -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a Cloud Architect and DevOps Engineer with experience in AWS, Azure, and CI/CD automation.
+        I enjoy designing scalable cloud architectures, optimizing performance, and implementing secure and cost-efficient solutions.
+        My goal is to build reliable, maintainable, and modern cloud infrastructures that accelerate business success.
+    </p>
+</section>
 
+<!-- Skills Section -->
+<section id="skills">
+    <h2>Skills & Tools</h2>
+    <div class="skill-icons">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects" id="projects">
     <div class="project-card">
         <img src="Cloud architecture.png" alt="Cloud Architecture Project">
-        <h2>Cloud Architecture Project</h2>
+        <h3>Cloud Architecture Project</h3>
         <p>
             Designed and deployed a scalable cloud architecture in AWS and Azure.
             Focused on availability, performance, security, and cost efficiency using
@@ -160,7 +276,7 @@
 
     <div class="project-card">
         <img src="Frontend-vs.-Backend-ENG.png" alt="Fullstack Project">
-        <h2>Fullstack Demo Application</h2>
+        <h3>Fullstack Demo Application</h3>
         <p>
             Built a fullstack web application with a frontend in HTML/CSS and backend using Python Flask.
             Containerized the application with Docker for easy deployment.
@@ -172,9 +288,20 @@
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
         </div>
     </div>
-
 </section>
 
+<!-- Contact Section -->
+<section id="contact" style="background-color:#f0f8ff; text-align:center;">
+    <h2>Contact Me</h2>
+    <form action="mailto:Da.lia42@hotmail.se" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Footer -->
 <footer>
     <p>📧 <a href="mailto:Da.lia42@hotmail.se">Da.lia42@hotmail.se</a> · 📍 Stockholm</p>
     <p>
